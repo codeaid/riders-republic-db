@@ -10,6 +10,7 @@ const AirPage = lazy(() => import('pages/AirPage'));
 const BikesRacePage = lazy(() => import('pages/BikesRacePage'));
 const BikesTricksPage = lazy(() => import('pages/BikesTricksPage'));
 const PlaceholderPage = lazy(() => import('pages/PlaceholderPage'));
+const SnowRacePage = lazy(() => import('pages/SnowRacePage'));
 
 export const AppRoutes: VoidFunctionComponent = () => {
   // Retrieve available gear categories
@@ -29,6 +30,10 @@ export const AppRoutes: VoidFunctionComponent = () => {
         <Route
           component={BikesTricksPage}
           path={getCategoryPath(categories, CategoryType.BikeTricks)}
+        />
+        <Route
+          component={SnowRacePage}
+          path={getCategoryPath(categories, CategoryType.SnowRace)}
         />
         <Route component={PlaceholderPage} />
       </Switch>
