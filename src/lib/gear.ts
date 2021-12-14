@@ -1,9 +1,12 @@
-import { orderBy } from 'lodash';
+import { orderBy, sortBy, sortedUniq } from 'lodash';
 import { getBrandName } from 'lib/brands';
 import {
   BikeGearItem,
   GearItem,
+  GearItemStatsComparison,
+  GearItemStatsComparisonMap,
   GearSpecItem,
+  GearSpecStats,
   RocketwingGearItem,
   SnowGearItem,
   WingsuitGearItem,
@@ -16,6 +19,62 @@ import {
   SnowTricksSpecType,
   SpecType,
 } from 'types/specs';
+
+/**
+ * Build a map of gear stats and their associated comparisons within the
+ * specified specialization
+ *
+ * @param {Array<GearItem>} items Target items to build the map for
+ */
+export const getGearItemStatsComparisonMap = <TSpecType extends SpecType>(
+  items: Array<GearSpecItem<TSpecType>>,
+) => {
+  // Build a map of stats and a list of all their available values
+  const map = items
+    .map(item => item.stats)
+    .reduce(
+      (map, stats) =>
+        Object.entries(stats).reduce((innerMap, [stat, value]) => {
+          // Retrieve current stats values or default to an empty array
+          const values =
+            innerMap.get(stat as keyof GearSpecStats<TSpecType>) ?? [];
+
+          // Append current stat value to the end of the list
+          return innerMap.set(stat as keyof GearSpecStats<TSpecType>, [
+            ...values,
+            value,
+          ]);
+        }, map),
+      new Map<keyof GearSpecStats<TSpecType>, Array<number>>(),
+    );
+
+  // Iterate through the map of numbers and generate a comparison map for each
+  const orderedMap = [...map].map(([stat, values]) => {
+    // Sort values in an ascending order and remove duplicates
+    const sorted = sortBy([...values]);
+    const unique = sortedUniq(sorted).reverse();
+
+    // Retrieve best and second best values from the array
+    const [best = 0, second] = unique;
+
+    // Calculate the lowest (worst) value
+    const worst = unique.length ? Math.min(...unique) : 0;
+
+    return [
+      stat as keyof GearSpecStats<TSpecType>,
+      {
+        best,
+        // Use best values as second best if array only contains one value
+        second: second ?? best,
+        worst,
+      } as GearItemStatsComparison,
+    ];
+  });
+
+  return Object.fromEntries(orderedMap) as GearItemStatsComparisonMap<
+    GearSpecItem<TSpecType>
+  >;
+};
 
 /**
  * Find gear items belonging to the specified specialization
