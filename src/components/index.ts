@@ -1,4 +1,5 @@
 export * from './App';
+export * from './Ellipsis';
 export * from './GearCategoryContext';
 export * from './GearItemContext';
 export * from './GearSpecContext';
