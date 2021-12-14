@@ -14,6 +14,13 @@ export const theme = {
     },
   },
   gear: {
+    card: {
+      background: '#ffffff',
+      border: {
+        color: 'rgba(0, 0, 0, 0.15)',
+      },
+    },
+    elite: '#ffb446',
     score: {
       icon: {
         background: '#343230',

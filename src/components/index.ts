@@ -3,6 +3,7 @@ export * from './Ellipsis';
 export * from './GearCategoryContext';
 export * from './GearCategoryIcon';
 export * from './GearCategoryMenu';
+export * from './GearItemCard';
 export * from './GearItemContext';
 export * from './GearItemStat';
 export * from './GearItemStats';
