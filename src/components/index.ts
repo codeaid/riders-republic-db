@@ -1,6 +1,7 @@
 export * from './App';
 export * from './Ellipsis';
 export * from './GearCategoryContext';
+export * from './GearCategoryIcon';
 export * from './GearItemContext';
 export * from './GearSpecContext';
 export * from './LoadingOverlay';
