@@ -71,6 +71,18 @@ export type GearItem =
   | SnowGearItem
   | WingsuitGearItem;
 
+// Gear stats type associated with the specified gear item type
+type GearItemStats<TGearItem extends GearItem> = TGearItem extends BikeGearItem
+  ? BikeStats
+  : TGearItem extends RocketwingGearItem
+  ? RocketwingStats
+  : TGearItem extends SnowGearItem
+  ? SnowStats
+  : TGearItem extends WingsuitGearItem
+  ? WingsuitStats
+  : never;
+
+// Gear item type associated with the specified gear specialization type
 export type GearSpecItem<TSpecType extends SpecType> =
   TSpecType extends AirSpecType.Rocketwing
     ? RocketwingGearItem
@@ -94,17 +106,7 @@ export type GearSpecItem<TSpecType extends SpecType> =
     ? SnowGearItem
     : never;
 
-export type GearItemStats<TGearItem extends GearItem> =
-  TGearItem extends BikeGearItem
-    ? BikeStats
-    : TGearItem extends RocketwingGearItem
-    ? RocketwingStats
-    : TGearItem extends SnowGearItem
-    ? SnowStats
-    : TGearItem extends WingsuitGearItem
-    ? WingsuitStats
-    : never;
-
+// Gear stats type associated with the specified gear specialization type
 export type GearSpecStats<TSpecType extends SpecType> =
   TSpecType extends AirSpecType.Rocketwing
     ? RocketwingStats
@@ -133,4 +135,8 @@ export type GearItemStatsComparison = {
   best: number;
   second?: number;
   worst: number;
+};
+
+export type GearItemStatsComparisonMap<TGearItem extends GearItem> = {
+  [K in keyof GearItemStats<TGearItem>]: GearItemStatsComparison;
 };
