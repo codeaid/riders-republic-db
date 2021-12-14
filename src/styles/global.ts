@@ -73,6 +73,7 @@ export const GlobalStyle = createGlobalStyle`
   html {
     font-family: 'Heading Pro', sans-serif;
     font-size: 25px;
+    line-height: 1em;
   }
   
   body {
