@@ -5,6 +5,7 @@ export * from './GearCategoryIcon';
 export * from './GearCategoryMenu';
 export * from './GearItemCard';
 export * from './GearItemContext';
+export * from './GearItemGrid';
 export * from './GearItemStat';
 export * from './GearItemStats';
 export * from './GearScore';
