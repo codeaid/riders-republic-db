@@ -41,7 +41,7 @@ export const theme = {
     },
   },
   sidebar: {
-    background: '#ffffff',
+    background: 'rgba(0, 0, 0, 0.75)',
   },
   stats: {
     progress: {
@@ -54,7 +54,7 @@ export const theme = {
     },
   },
   toolbar: {
-    background: '#343230',
+    background: '#202020',
     color: '#fafafa',
   },
   transition: {
