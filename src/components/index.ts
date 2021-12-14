@@ -6,6 +6,7 @@ export * from './GearCategoryMenu';
 export * from './GearItemContext';
 export * from './GearItemStat';
 export * from './GearItemStats';
+export * from './GearScore';
 export * from './GearSpecContext';
 export * from './LoadingOverlay';
 export * from './Logo';

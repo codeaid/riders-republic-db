@@ -13,6 +13,16 @@ export const theme = {
       tricks: '#3ca4aa',
     },
   },
+  gear: {
+    score: {
+      icon: {
+        background: '#343230',
+      },
+      number: {
+        background: '#ffffff',
+      },
+    },
+  },
   navigation: {
     item: {
       active: {
