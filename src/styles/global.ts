@@ -1,9 +1,23 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
-import HeadingProBold from './fonts/HeadingPro-Bold.woff2';
-import HeadingProBook from './fonts/HeadingPro-Book.woff2';
-import HeadingProExtraBold from './fonts/HeadingPro-ExtraBold.woff2';
-import HeadingProLight from './fonts/HeadingPro-Light.woff2';
+import {
+  HeadingProBoldWoff2,
+  HeadingProBookWoff2,
+  HeadingProExtraBoldWoff2,
+  HeadingProLightWoff2,
+  HeadingProBoldEot,
+  HeadingProBoldTtf,
+  HeadingProBoldWoff,
+  HeadingProBookEot,
+  HeadingProBookTtf,
+  HeadingProBookWoff,
+  HeadingProExtraBoldEot,
+  HeadingProExtraBoldTtf,
+  HeadingProExtraBoldWoff,
+  HeadingProLightEot,
+  HeadingProLightTtf,
+  HeadingProLightWoff,
+} from './fonts';
 
 export const GlobalStyle = createGlobalStyle`
   ${normalize};
@@ -12,28 +26,44 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Heading Pro';
     font-style: normal;
     font-weight: normal;
-    src: url(${HeadingProLight}) format('woff2');
+    src: url(${HeadingProLightEot});
+    src: url('${HeadingProLightEot}?#iefix') format('embedded-opentype'),
+         url(${HeadingProLightWoff2}) format('woff2'),
+         url(${HeadingProLightWoff}) format('woff'),
+         url(${HeadingProLightTtf}) format('truetype');
   }
 
   @font-face {
     font-family: 'Heading Pro';
     font-style: normal;
     font-weight: bold;
-    src: url(${HeadingProBold}) format('woff2');
+    src: url(${HeadingProBoldEot});
+    src: url('${HeadingProBoldEot}?#iefix') format('embedded-opentype'),
+         url(${HeadingProBoldWoff2}) format('woff2'),
+         url(${HeadingProBoldWoff}) format('woff'),
+         url(${HeadingProBoldTtf}) format('truetype');
   }
 
   @font-face {
     font-family: 'Heading Pro Book';
     font-style: normal;
     font-weight: normal;
-    src: url(${HeadingProBook}) format('woff2');
+    src: url(${HeadingProBookEot});
+    src: url('${HeadingProBookEot}?#iefix') format('embedded-opentype'),
+         url(${HeadingProBookWoff2}) format('woff2'),
+         url(${HeadingProBookWoff}) format('woff'),
+         url(${HeadingProBookTtf}) format('truetype');
   }
 
   @font-face {
     font-family: 'Heading Pro Extra Bold';
     font-style: normal;
     font-weight: 800;
-    src: url(${HeadingProExtraBold}) format('woff2');
+    src: url(${HeadingProExtraBoldEot});
+    src: url('${HeadingProExtraBoldEot}?#iefix') format('embedded-opentype'),
+         url(${HeadingProExtraBoldWoff2}) format('woff2'),
+         url(${HeadingProExtraBoldWoff}) format('woff'),
+         url(${HeadingProExtraBoldTtf}) format('truetype');
   }
 
   *, ::after, ::before {
