@@ -10,6 +10,7 @@ export * from './GearItemStat';
 export * from './GearItemStats';
 export * from './GearScore';
 export * from './GearSpecContext';
+export * from './GearSpecTabs';
 export * from './LoadingOverlay';
 export * from './Logo';
 export * from './Sidebar';
