@@ -127,3 +127,10 @@ export type GearSpecStats<TSpecType extends SpecType> =
     : TSpecType extends SnowTricksSpecType.Snowpark
     ? SnowStats
     : never;
+
+// Best, second best and worst stats values in a specialization
+export type GearItemStatsComparison = {
+  best: number;
+  second?: number;
+  worst: number;
+};

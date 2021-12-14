@@ -26,6 +26,16 @@ export const theme = {
   sidebar: {
     background: '#ffffff',
   },
+  stats: {
+    progress: {
+      base: '#343230',
+      bonus: '#55a55a',
+    },
+    value: {
+      best: '#64a032',
+      worst: '#b42819',
+    },
+  },
   toolbar: {
     background: '#343230',
     color: '#fafafa',
