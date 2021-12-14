@@ -14,4 +14,5 @@ export * from './LoadingOverlay';
 export * from './Logo';
 export * from './Sidebar';
 export * from './Spinner';
+export * from './Tabs';
 export * from './Toolbar';
