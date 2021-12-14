@@ -1,0 +1,26 @@
+# IDEs
+/.idea
+/.vscode
+
+# Build directory
+/build
+
+# Testing coverage
+/coverage
+
+# NPM dependencies
+/node_modules
+
+# Miscellaneous
+.DS_Store
+
+# dotenv configuration files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
