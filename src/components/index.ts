@@ -5,3 +5,4 @@ export * from './GearSpecContext';
 export * from './LoadingOverlay';
 export * from './Logo';
 export * from './Spinner';
+export * from './Toolbar';
