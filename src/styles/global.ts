@@ -46,6 +46,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   body {
+    background-color: ${({ theme }) => theme.body.background};
   }
   
   html,

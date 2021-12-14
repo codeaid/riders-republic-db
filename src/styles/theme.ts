@@ -1,4 +1,7 @@
 export const theme = {
+  body: {
+    background: '#ffffff',
+  },
   category: {
     air: '#55a65a',
     bike: {

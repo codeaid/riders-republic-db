@@ -2,6 +2,7 @@ import { VoidFunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { GearCategoryMenu, Sidebar, Toolbar } from 'components';
 import { useGearCategories } from 'hooks';
+import { AppRoutes } from './AppRoutes';
 import {
   AppContent,
   AppToolbarLogo,
@@ -26,7 +27,9 @@ export const App: VoidFunctionComponent = () => {
         <GearCategoryMenu categories={categories} />
       </Sidebar>
 
-      <AppContent>...</AppContent>
+      <AppContent>
+        <AppRoutes />
+      </AppContent>
     </StyledApp>
   );
 };
