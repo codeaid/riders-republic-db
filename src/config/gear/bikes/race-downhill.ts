@@ -83,7 +83,7 @@ const gear: Array<BikeGearItem> = [
     stats: {
       sprint: 0,
       speed: 0,
-      airRotation: 25,
+      airRotation: 0,
       grip: 0,
       absorption: 0,
     },

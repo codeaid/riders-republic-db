@@ -82,10 +82,10 @@ const gear: Array<SnowGearItem> = [
     score: 840,
     spec: SnowTricksSpecType.OffTrack,
     stats: {
-      speed: 0,
-      airRotation: 0,
-      deepSnow: 0,
-      absorption: 0,
+      speed: 52,
+      airRotation: 62,
+      deepSnow: 75,
+      absorption: 80,
     },
   },
   {
@@ -166,10 +166,10 @@ const gear: Array<SnowGearItem> = [
     score: 803,
     spec: SnowTricksSpecType.OffTrack,
     stats: {
-      speed: 0,
-      airRotation: 0,
-      deepSnow: 0,
-      absorption: 0,
+      speed: 41,
+      airRotation: 64,
+      deepSnow: 80,
+      absorption: 80,
     },
   },
   {
@@ -180,10 +180,10 @@ const gear: Array<SnowGearItem> = [
     score: 803,
     spec: SnowTricksSpecType.OffTrack,
     stats: {
-      speed: 0,
-      airRotation: 0,
-      deepSnow: 0,
-      absorption: 0,
+      speed: 45,
+      airRotation: 60,
+      deepSnow: 80,
+      absorption: 80,
     },
   },
 ];
