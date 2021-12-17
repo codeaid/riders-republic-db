@@ -1,7 +1,9 @@
+import { useCallback } from 'react';
 import { GearItemStats, GearScore } from 'components';
 import {
-  useGearItemStatsComparisonMap,
   useBrandName,
+  useGearItemPersistence,
+  useGearItemStatsComparisonMap,
   useGearSpec,
 } from 'hooks';
 import { GearItem } from 'types/gear';
@@ -12,6 +14,7 @@ import {
   GearItemCardHeaderKind,
   GearItemCardHeaderLabels,
   GearItemCardHeaderModel,
+  GearItemCardMarker,
   GearItemCardStatsWrapper,
   StyledGearItemCard,
 } from './GearItemCard.styled';
@@ -25,14 +28,26 @@ export const GearItemCard = <TGearItem extends GearItem>(
   // Retrieve name of the brand associated with the item
   const brand = useBrandName(item.brand);
 
+  // Retrieve gear persistence helpers
+  const { erase, isPersisted, persist } = useGearItemPersistence(item);
+
   // Retrieve specialization entity associated with the item
   const spec = useGearSpec(item.spec);
 
   // Calculate stats comparison for all items in current specialization
   const comparisonMap = useGearItemStatsComparisonMap(item.spec);
 
+  /**
+   * Handle clicks on the card component
+   */
+  const handleClick = useCallback(
+    () => (isPersisted ? erase() : persist()),
+    [isPersisted, erase, persist],
+  );
+
   return (
-    <StyledGearItemCard>
+    <StyledGearItemCard onClick={handleClick}>
+      {isPersisted && <GearItemCardMarker />}
       <GearItemCardBorder />
       <GearItemCardHeader>
         <GearItemCardHeaderLabels>

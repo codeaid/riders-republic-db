@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import tileSrc from 'assets/bg-tile.png';
 import { Ellipsis } from 'components/Ellipsis';
+import markerSrc from './GearItem.marker.png';
 
 export const GearItemCardBorder = styled.div`
   background-color: ${({ theme }) => theme.gear.elite};
@@ -69,6 +70,16 @@ export const GearItemCardHeaderModel = styled(Ellipsis)`
   line-height: 1em;
 `;
 
+export const GearItemCardMarker = styled.div`
+  background-image: url(${markerSrc});
+  height: 54px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 54px;
+  z-index: 2;
+`;
+
 export const GearItemCardStatsWrapper = styled.div`
   padding: 0.75rem 1rem;
 `;
@@ -78,6 +89,7 @@ export const StyledGearItemCard = styled.div`
   box-shadow: 0 0.7px 2.7px rgba(0, 0, 0, 0.016),
     0 1.7px 6.9px rgba(0, 0, 0, 0.022), 0 3.5px 14.2px rgba(0, 0, 0, 0.028),
     0 7.3px 29.2px rgba(0, 0, 0, 0.034), 0 20px 80px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
   position: relative;
   transition: box-shadow ${({ theme }) => theme.transition.fast} ease-in-out;
   user-select: none;
