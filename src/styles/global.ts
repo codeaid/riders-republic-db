@@ -4,38 +4,6 @@ import { normalize } from 'styled-normalize';
 export const GlobalStyle = createGlobalStyle`
   ${normalize};
 
-  @font-face {
-    font-display: swap;
-    font-family: 'Heading Pro';
-    font-style: normal;
-    font-weight: normal;
-    src: url('/fonts/HeadingPro-Light.woff') format('woff');
-  }
-
-  @font-face {
-    font-display: swap;
-    font-family: 'Heading Pro';
-    font-style: normal;
-    font-weight: bold;
-    src: url('/fonts/HeadingPro-Bold.woff') format('woff');
-  }
-
-  @font-face {
-    font-display: swap;
-    font-family: 'Heading Pro Book';
-    font-style: normal;
-    font-weight: normal;
-    src: url('/fonts/HeadingPro-Book.woff') format('woff');
-  }
-
-  @font-face {
-    font-display: swap;
-    font-family: 'Heading Pro Extra Bold';
-    font-style: normal;
-    font-weight: 800;
-    src: url('/fonts/HeadingPro-ExtraBold.woff') format('woff');
-  }
-
   *, ::after, ::before {
     box-sizing: border-box;
   }

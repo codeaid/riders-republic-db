@@ -15,25 +15,62 @@
       href="%PUBLIC_URL%/fonts/HeadingPro-Bold.woff"
       as="font"
       type="font/woff"
+      crossorigin
     />
     <link
       rel="preload"
       href="%PUBLIC_URL%/fonts/HeadingPro-Book.woff"
       as="font"
       type="font/woff"
+      crossorigin
     />
     <link
       rel="preload"
       href="%PUBLIC_URL%/fonts/HeadingPro-ExtraBold.woff"
       as="font"
       type="font/woff"
+      crossorigin
     />
     <link
       rel="preload"
       href="%PUBLIC_URL%/fonts/HeadingPro-Light.woff"
       as="font"
       type="font/woff"
+      crossorigin
     />
+    <style>
+      @font-face {
+        font-display: swap;
+        font-family: 'Heading Pro';
+        font-style: normal;
+        font-weight: normal;
+        src: url('%PUBLIC_URL%/fonts/HeadingPro-Light.woff') format('woff');
+      }
+
+      @font-face {
+        font-display: swap;
+        font-family: 'Heading Pro';
+        font-style: normal;
+        font-weight: bold;
+        src: url('%PUBLIC_URL%/fonts/HeadingPro-Bold.woff') format('woff');
+      }
+
+      @font-face {
+        font-display: swap;
+        font-family: 'Heading Pro Book';
+        font-style: normal;
+        font-weight: normal;
+        src: url('%PUBLIC_URL%/fonts/HeadingPro-Book.woff') format('woff');
+      }
+
+      @font-face {
+        font-display: swap;
+        font-family: 'Heading Pro Extra Bold';
+        font-style: normal;
+        font-weight: 800;
+        src: url('%PUBLIC_URL%/fonts/HeadingPro-ExtraBold.woff') format('woff');
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
