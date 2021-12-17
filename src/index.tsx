@@ -19,7 +19,7 @@ render(
         <GearItemProvider value={gear}>
           <ThemeProvider theme={theme}>
             <GlobalStyle />
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
               <App />
             </BrowserRouter>
           </ThemeProvider>
