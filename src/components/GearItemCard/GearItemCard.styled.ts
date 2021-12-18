@@ -1,7 +1,17 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import tileSrc from 'assets/bg-tile.png';
 import { Ellipsis } from 'components/Ellipsis';
 import markerSrc from './GearItem.marker.png';
+
+const kfBorder = keyframes`
+  0%,
+  100% {
+      opacity: 0.3;
+  }
+  50% {
+      opacity: 1;
+  }
+`;
 
 export const GearItemCardBorder = styled.div`
   background-color: ${({ theme }) => theme.gear.elite};
@@ -94,6 +104,17 @@ export const StyledGearItemCard = styled.div`
   transition: box-shadow ${({ theme }) => theme.transition.fast} ease-in-out;
   user-select: none;
 
+  &::before {
+    border: 11px solid ${({ theme }) => theme.gear.elite};
+    bottom: -6px;
+    content: '';
+    left: -6px;
+    opacity: 0;
+    position: absolute;
+    right: -6px;
+    top: -6px;
+  }
+
   &::after {
     border: 0.24rem solid ${({ theme }) => theme.gear.card.border.color};
     bottom: 0;
@@ -105,8 +126,9 @@ export const StyledGearItemCard = styled.div`
   }
 
   &:hover {
-    box-shadow: 0 0.7px 2.7px rgba(0, 0, 0, 0.047),
-      0 1.7px 6.9px rgba(0, 0, 0, 0.067), 0 3.5px 14.2px rgba(0, 0, 0, 0.083),
-      0 7.3px 29.2px rgba(0, 0, 0, 0.103), 0 20px 80px rgba(0, 0, 0, 0.15);
+    &::before {
+      animation: ${kfBorder} 1s ease-in-out;
+      animation-iteration-count: infinite;
+    }
   }
 `;
