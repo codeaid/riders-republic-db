@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import {
   App,
@@ -19,9 +19,15 @@ render(
         <GearItemProvider value={gear}>
           <ThemeProvider theme={theme}>
             <GlobalStyle />
-            <BrowserRouter basename={process.env.PUBLIC_URL}>
-              <App />
-            </BrowserRouter>
+            {process.env.PUBLIC_URL ? (
+              <HashRouter>
+                <App />
+              </HashRouter>
+            ) : (
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            )}
           </ThemeProvider>
         </GearItemProvider>
       </GearSpecProvider>
