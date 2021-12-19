@@ -19,6 +19,7 @@ export const theme = {
       border: {
         color: 'rgba(0, 0, 0, 0.15)',
       },
+      highlight: '#deb33f',
     },
     elite: '#ffb446',
     score: {

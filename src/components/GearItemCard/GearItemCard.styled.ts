@@ -6,10 +6,10 @@ import markerSrc from './GearItem.marker.png';
 const kfBorder = keyframes`
   0%,
   100% {
-      opacity: 0.3;
+      opacity: 1;
   }
   50% {
-      opacity: 1;
+      opacity: 0.5;
   }
 `;
 
@@ -105,7 +105,7 @@ export const StyledGearItemCard = styled.div`
   user-select: none;
 
   &::before {
-    border: 11px solid ${({ theme }) => theme.gear.elite};
+    border: 11px solid ${({ theme }) => theme.gear.card.highlight};
     bottom: -6px;
     content: '';
     left: -6px;
