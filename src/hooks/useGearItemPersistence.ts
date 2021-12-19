@@ -1,6 +1,6 @@
 import { uniq, without } from 'lodash';
 import { useCallback } from 'react';
-import sha1 from 'sha1';
+import { getGearItemHash } from 'lib/gear';
 import { GearItem } from 'types/gear';
 import { useStorage } from './useStorage';
 
@@ -17,18 +17,6 @@ export const useGearItemPersistence = (storageKey = 'gear.owned') => {
   );
 
   /**
-   * Generate a unique hash for the specified gear item
-   *
-   * @param {GearItem} item Target gear item
-   */
-  const getGearItemHash = useCallback((item: GearItem) => {
-    const parts = [item.category, item.spec, item.brand, item.model];
-    const result = sha1(parts.join(':'));
-
-    return result.substr(0, 8);
-  }, []);
-
-  /**
    * Check if the specified gear item is currently persisted
    *
    * @param {GearItem} item Target gear item
@@ -39,7 +27,7 @@ export const useGearItemPersistence = (storageKey = 'gear.owned') => {
       const hash = getGearItemHash(item);
       return persistedGearItems.includes(hash);
     },
-    [getGearItemHash, persistedGearItems],
+    [persistedGearItems],
   );
 
   /**
@@ -56,7 +44,7 @@ export const useGearItemPersistence = (storageKey = 'gear.owned') => {
       const value = uniq([...persistedGearItems, hash]);
       setPersistedGearItems(value);
     },
-    [getGearItemHash, persistedGearItems, setPersistedGearItems],
+    [persistedGearItems, setPersistedGearItems],
   );
 
   /**
@@ -73,7 +61,7 @@ export const useGearItemPersistence = (storageKey = 'gear.owned') => {
       const value = without(persistedGearItems, hash);
       setPersistedGearItems(value);
     },
-    [getGearItemHash, persistedGearItems, setPersistedGearItems],
+    [persistedGearItems, setPersistedGearItems],
   );
 
   /**
