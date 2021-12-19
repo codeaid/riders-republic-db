@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/riders-republic-db/static/js/main.bc05467f.chunk.js",
-    "main.js.map": "/riders-republic-db/static/js/main.bc05467f.chunk.js.map",
+    "main.js": "/riders-republic-db/static/js/main.d9aa0d3a.chunk.js",
+    "main.js.map": "/riders-republic-db/static/js/main.d9aa0d3a.chunk.js.map",
     "runtime-main.js": "/riders-republic-db/static/js/runtime-main.c2dbed75.js",
     "runtime-main.js.map": "/riders-republic-db/static/js/runtime-main.c2dbed75.js.map",
-    "static/js/2.4d4c774f.chunk.js": "/riders-republic-db/static/js/2.4d4c774f.chunk.js",
-    "static/js/2.4d4c774f.chunk.js.map": "/riders-republic-db/static/js/2.4d4c774f.chunk.js.map",
+    "static/js/2.3772c54d.chunk.js": "/riders-republic-db/static/js/2.3772c54d.chunk.js",
+    "static/js/2.3772c54d.chunk.js.map": "/riders-republic-db/static/js/2.3772c54d.chunk.js.map",
     "index.html": "/riders-republic-db/index.html",
-    "static/js/2.4d4c774f.chunk.js.LICENSE.txt": "/riders-republic-db/static/js/2.4d4c774f.chunk.js.LICENSE.txt",
+    "static/js/2.3772c54d.chunk.js.LICENSE.txt": "/riders-republic-db/static/js/2.3772c54d.chunk.js.LICENSE.txt",
     "static/media/Logo.image.774c0257.png": "/riders-republic-db/static/media/Logo.image.774c0257.png",
     "static/media/bg-body.4c1feeb6.jpeg": "/riders-republic-db/static/media/bg-body.4c1feeb6.jpeg",
     "static/media/bg-tile.3771f551.png": "/riders-republic-db/static/media/bg-tile.3771f551.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c2dbed75.js",
-    "static/js/2.4d4c774f.chunk.js",
-    "static/js/main.bc05467f.chunk.js"
+    "static/js/2.3772c54d.chunk.js",
+    "static/js/main.d9aa0d3a.chunk.js"
   ]
 }
