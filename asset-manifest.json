@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/riders-republic-db/static/js/main.6973a8d5.chunk.js",
-    "main.js.map": "/riders-republic-db/static/js/main.6973a8d5.chunk.js.map",
+    "main.js": "/riders-republic-db/static/js/main.513e2591.chunk.js",
+    "main.js.map": "/riders-republic-db/static/js/main.513e2591.chunk.js.map",
     "runtime-main.js": "/riders-republic-db/static/js/runtime-main.c2dbed75.js",
     "runtime-main.js.map": "/riders-republic-db/static/js/runtime-main.c2dbed75.js.map",
     "static/js/2.3772c54d.chunk.js": "/riders-republic-db/static/js/2.3772c54d.chunk.js",
@@ -15,6 +15,6 @@
   "entrypoints": [
     "static/js/runtime-main.c2dbed75.js",
     "static/js/2.3772c54d.chunk.js",
-    "static/js/main.6973a8d5.chunk.js"
+    "static/js/main.513e2591.chunk.js"
   ]
 }
