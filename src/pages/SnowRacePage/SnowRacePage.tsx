@@ -1,17 +1,11 @@
-import { useContext, useMemo, VoidFunctionComponent } from 'react';
-import { GearSpecContext, GearSpecTabs } from 'components';
-import { getCategorySpecs } from 'lib/specs';
+import { VoidFunctionComponent } from 'react';
+import { GearSpecTabs } from 'components';
+import { useGearSpecs } from 'hooks';
 import { CategoryType } from 'types/categories';
 
 export const SnowRacePage: VoidFunctionComponent = () => {
-  // Retrieve all available specializations
-  const specsList = useContext(GearSpecContext);
-
   // Extract snow race specializations
-  const specs = useMemo(
-    () => getCategorySpecs(specsList, CategoryType.SnowRace),
-    [specsList],
-  );
+  const specs = useGearSpecs(CategoryType.SnowRace);
 
   return <GearSpecTabs specs={specs} />;
 };
