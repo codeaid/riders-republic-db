@@ -1,5 +1,6 @@
 import { GearItemCardToggleHandler } from 'components';
-import { GearItem, GearItemStatsComparisonMap } from 'types/gear';
+import { GearItem } from 'types/gear';
+import { GearItemStatsComparisonMap } from 'types/stats';
 
 export interface GearItemGridProps<TGearItem extends GearItem> {
   comparisonMap: GearItemStatsComparisonMap<TGearItem>;

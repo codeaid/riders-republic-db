@@ -1,4 +1,5 @@
 import { CategoryType } from 'types/categories';
+import { GearCategorySpecType } from 'types/mapping';
 
 // Air specializations
 export enum AirSpecType {
@@ -44,7 +45,7 @@ type GearSpecEntity<TCategoryType extends CategoryType> = {
   code: string;
   description: string;
   name: string;
-  type: CategorySpec<TCategoryType>;
+  type: GearCategorySpecType<TCategoryType>;
 };
 
 // Category specialization entity types
@@ -61,17 +62,3 @@ export type GearSpec =
   | BikeTricksSpec
   | SnowRaceSpec
   | SnowTricksSpec;
-
-// Type retrieving specialization enum for the specified category type
-export type CategorySpec<TCategory extends CategoryType> =
-  TCategory extends CategoryType.Air
-    ? AirSpecType
-    : TCategory extends CategoryType.BikeRace
-    ? BikeRaceSpecType
-    : TCategory extends CategoryType.BikeTricks
-    ? BikeTricksSpecType
-    : TCategory extends CategoryType.SnowRace
-    ? SnowRaceSpecType
-    : TCategory extends CategoryType.SnowTricks
-    ? SnowTricksSpecType
-    : never;

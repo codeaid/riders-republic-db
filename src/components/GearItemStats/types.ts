@@ -1,11 +1,11 @@
 import {
   BikeGearItem,
   GearItem,
-  GearItemStatsComparisonMap,
   RocketwingGearItem,
   SnowGearItem,
   WingsuitGearItem,
 } from 'types/gear';
+import { GearItemStatsComparisonMap } from 'types/stats';
 
 export interface GearItemStatsBikeProps {
   comparisonMap: GearItemStatsComparisonMap<BikeGearItem>;

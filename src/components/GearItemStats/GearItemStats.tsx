@@ -8,11 +8,11 @@ import {
 import {
   BikeGearItem,
   GearItem,
-  GearItemStatsComparisonMap,
   RocketwingGearItem,
   SnowGearItem,
   WingsuitGearItem,
 } from 'types/gear';
+import { GearItemStatsComparisonMap } from 'types/stats';
 import { StyledGearItemStats } from './GearItemStats.styled';
 import { GearItemStatsBike } from './GearItemStatsBike';
 import { GearItemStatsRocketwing } from './GearItemStatsRocketwing';

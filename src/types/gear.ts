@@ -1,14 +1,12 @@
 import { Brand } from 'types/brands';
 import { CategoryType } from 'types/categories';
 import {
-  AirSpecType,
-  BikeRaceSpecType,
-  BikeTricksSpecType,
-  CategorySpec,
-  SnowRaceSpecType,
-  SnowTricksSpecType,
-  SpecType,
-} from 'types/specs';
+  BikeStats,
+  RocketwingStats,
+  SnowStats,
+  WingsuitStats,
+} from 'types/stats';
+import { GearCategorySpecType } from 'types/mapping';
 
 type GearItemEntity<TCategoryType extends CategoryType, TStats> = {
   brand: Brand;
@@ -17,35 +15,8 @@ type GearItemEntity<TCategoryType extends CategoryType, TStats> = {
   model: string;
   owned?: boolean;
   score: number;
-  spec: CategorySpec<TCategoryType>;
+  spec: GearCategorySpecType<TCategoryType>;
   stats: TStats;
-};
-
-export type BikeStats = {
-  sprint: number;
-  speed: number;
-  airRotation: number;
-  grip: number;
-  absorption: number;
-};
-
-export type RocketwingStats = {
-  speed: number;
-  mobility: number;
-  engineBoost: number;
-};
-
-export type SnowStats = {
-  speed: number;
-  airRotation: number;
-  deepSnow: number;
-  absorption: number;
-};
-
-export type WingsuitStats = {
-  vertical: number;
-  horizontal: number;
-  slowMode: number;
 };
 
 // Generate bike gear union
@@ -71,73 +42,3 @@ export type GearItem =
   | RocketwingGearItem
   | SnowGearItem
   | WingsuitGearItem;
-
-// Gear stats type associated with the specified gear item type
-type GearItemStats<TGearItem extends GearItem> = TGearItem extends BikeGearItem
-  ? BikeStats
-  : TGearItem extends RocketwingGearItem
-  ? RocketwingStats
-  : TGearItem extends SnowGearItem
-  ? SnowStats
-  : TGearItem extends WingsuitGearItem
-  ? WingsuitStats
-  : never;
-
-// Gear item type associated with the specified gear specialization type
-export type GearSpecItem<TSpecType extends SpecType> =
-  TSpecType extends AirSpecType.Rocketwing
-    ? RocketwingGearItem
-    : TSpecType extends AirSpecType.Wingsuit
-    ? WingsuitGearItem
-    : TSpecType extends BikeRaceSpecType.Downhill
-    ? BikeGearItem
-    : TSpecType extends BikeRaceSpecType.Road
-    ? BikeGearItem
-    : TSpecType extends BikeTricksSpecType.Freeride
-    ? BikeGearItem
-    : TSpecType extends BikeTricksSpecType.Slopestyle
-    ? BikeGearItem
-    : TSpecType extends SnowRaceSpecType.DeepSnow
-    ? SnowGearItem
-    : TSpecType extends SnowRaceSpecType.Downhill
-    ? SnowGearItem
-    : TSpecType extends SnowTricksSpecType.OffTrack
-    ? SnowGearItem
-    : TSpecType extends SnowTricksSpecType.Snowpark
-    ? SnowGearItem
-    : never;
-
-// Gear stats type associated with the specified gear specialization type
-export type GearSpecStats<TSpecType extends SpecType> =
-  TSpecType extends AirSpecType.Rocketwing
-    ? RocketwingStats
-    : TSpecType extends AirSpecType.Wingsuit
-    ? WingsuitStats
-    : TSpecType extends BikeRaceSpecType.Downhill
-    ? BikeStats
-    : TSpecType extends BikeRaceSpecType.Road
-    ? BikeStats
-    : TSpecType extends BikeTricksSpecType.Freeride
-    ? BikeStats
-    : TSpecType extends BikeTricksSpecType.Slopestyle
-    ? BikeStats
-    : TSpecType extends SnowRaceSpecType.DeepSnow
-    ? SnowStats
-    : TSpecType extends SnowRaceSpecType.Downhill
-    ? SnowStats
-    : TSpecType extends SnowTricksSpecType.OffTrack
-    ? SnowStats
-    : TSpecType extends SnowTricksSpecType.Snowpark
-    ? SnowStats
-    : never;
-
-// Best, second best and worst stats values in a specialization
-export type GearItemStatsComparison = {
-  best: number;
-  second?: number;
-  worst: number;
-};
-
-export type GearItemStatsComparisonMap<TGearItem extends GearItem> = {
-  [K in keyof GearItemStats<TGearItem>]: GearItemStatsComparison;
-};

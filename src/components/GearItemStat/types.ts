@@ -1,4 +1,4 @@
-import { GearItemStatsComparison } from 'types/gear';
+import { GearItemStatsComparison } from 'types/stats';
 
 type GearItemStatType =
   | 'absorption'

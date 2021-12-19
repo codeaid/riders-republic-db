@@ -1,4 +1,5 @@
-import { GearItem, GearItemStatsComparisonMap } from 'types/gear';
+import { GearItem } from 'types/gear';
+import { GearItemStatsComparisonMap } from 'types/stats';
 
 export type GearItemCardToggleHandler = (item: GearItem) => void;
 
