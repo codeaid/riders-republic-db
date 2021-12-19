@@ -1,77 +1,98 @@
 import { uniq, without } from 'lodash';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback } from 'react';
 import sha1 from 'sha1';
 import { GearItem } from 'types/gear';
+import { useStorage } from './useStorage';
 
-// Name of the local storage key containing marked gear
-const storageKey = 'gear';
+/**
+ * Various gear item related web storage helpers
+ *
+ * @param {string} storageKey Target storage key
+ */
+export const useGearItemPersistence = (storageKey = 'gear.owned') => {
+  // List of currently persisted gear items
+  const [persistedGearItems, setPersistedGearItems] = useStorage<Array<string>>(
+    storageKey,
+    [],
+  );
 
-export const useGearItemPersistence = (item: GearItem) => {
-  const [refresh, setRefresh] = useState(0);
-
-  // Generate a unique hash for the specified gear item
-  const hash = useMemo(() => {
+  /**
+   * Generate a unique hash for the specified gear item
+   *
+   * @param {GearItem} item Target gear item
+   */
+  const getGearItemHash = useCallback((item: GearItem) => {
     const parts = [item.category, item.spec, item.brand, item.model];
     const result = sha1(parts.join(':'));
 
     return result.substr(0, 8);
-  }, [item]);
-
-  /**
-   * Get list of currently persisted gear items
-   */
-  const getPersistedItems = useCallback((): Array<string> => {
-    // Read gear storage value
-    const json = localStorage.getItem(storageKey);
-    if (!json) {
-      return [];
-    }
-
-    try {
-      // Attempt to parse the value
-      return JSON.parse(json);
-    } catch (e) {
-      return [];
-    }
   }, []);
 
-  // Flag indicating if the current gear item is persisted
-  const isPersisted = useMemo(
-    () => getPersistedItems().includes(hash),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [getPersistedItems, hash, refresh],
+  /**
+   * Check if the specified gear item is currently persisted
+   *
+   * @param {GearItem} item Target gear item
+   */
+  const isGearItemPersisted = useCallback(
+    (item: GearItem) => {
+      // Generate hash of the target item and retrieve currently stored items
+      const hash = getGearItemHash(item);
+      return persistedGearItems.includes(hash);
+    },
+    [getGearItemHash, persistedGearItems],
   );
 
   /**
-   * Persist current gear item to the storage
+   * Persist a gear item to the storage
+   *
+   * @param {GearItem} item Target gear item
    */
-  const persist = useCallback(() => {
-    // Append current gear item's hash to the stored list
-    const replacement = uniq([...getPersistedItems(), hash]);
-    localStorage.setItem(storageKey, JSON.stringify(replacement));
+  const setGearItemPersisted = useCallback(
+    (item: GearItem) => {
+      // Generate hash of the target item and retrieve currently stored items
+      const hash = getGearItemHash(item);
 
-    // Trigger internal value updates
-    setRefresh(Date.now());
-  }, [getPersistedItems, hash]);
+      // Append current gear item's hash to the stored list
+      const value = uniq([...persistedGearItems, hash]);
+      setPersistedGearItems(value);
+    },
+    [getGearItemHash, persistedGearItems, setPersistedGearItems],
+  );
 
   /**
-   * Remove current gear item from the storage
+   * Erase a gear item from the storage
+   *
+   * @param {GearItem} item Target gear item
    */
-  const erase = useCallback(() => {
-    // Remove current gear item's hash from the stored list
-    const replacement = without(getPersistedItems(), hash);
-    localStorage.setItem(storageKey, JSON.stringify(replacement));
+  const unsetGearItemPersisted = useCallback(
+    (item: GearItem) => {
+      // Generate hash of the target item and retrieve currently stored items
+      const hash = getGearItemHash(item);
 
-    // Trigger internal value updates
-    setRefresh(Date.now());
-  }, [getPersistedItems, hash]);
+      // Remove current gear item's hash from the stored list
+      const value = without(persistedGearItems, hash);
+      setPersistedGearItems(value);
+    },
+    [getGearItemHash, persistedGearItems, setPersistedGearItems],
+  );
 
-  // Refresh values on mount
-  useEffect(() => setRefresh(Date.now()), []);
+  /**
+   * Toggle current persistence state of the specified item
+   *
+   * @param {GearItem} item Target gear item
+   */
+  const toggleGearItemPersisted = useCallback(
+    (item: GearItem) =>
+      isGearItemPersisted(item)
+        ? unsetGearItemPersisted(item)
+        : setGearItemPersisted(item),
+    [isGearItemPersisted, setGearItemPersisted, unsetGearItemPersisted],
+  );
 
   return {
-    erase,
-    isPersisted,
-    persist,
+    isGearItemPersisted,
+    setGearItemPersisted,
+    toggleGearItemPersisted,
+    unsetGearItemPersisted,
   };
 };

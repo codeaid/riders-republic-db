@@ -15,6 +15,7 @@ type GearItemEntity<TCategoryType extends CategoryType, TStats> = {
   category: TCategoryType;
   kind?: string;
   model: string;
+  owned?: boolean;
   score: number;
   spec: CategorySpec<TCategoryType>;
   stats: TStats;

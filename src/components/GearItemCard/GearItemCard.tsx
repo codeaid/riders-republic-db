@@ -1,11 +1,6 @@
 import { useCallback } from 'react';
 import { GearItemStats, GearScore } from 'components';
-import {
-  useBrandName,
-  useGearItemPersistence,
-  useGearItemStatsComparisonMap,
-  useGearSpec,
-} from 'hooks';
+import { useBrandName, useGearSpec } from 'hooks';
 import { GearItem } from 'types/gear';
 import {
   GearItemCardBorder,
@@ -23,31 +18,25 @@ import { GearItemCardProps } from './types';
 export const GearItemCard = <TGearItem extends GearItem>(
   props: GearItemCardProps<TGearItem>,
 ) => {
-  const { item } = props;
+  const { comparisonMap, item, onToggle } = props;
 
   // Retrieve name of the brand associated with the item
   const brand = useBrandName(item.brand);
 
-  // Retrieve gear persistence helpers
-  const { erase, isPersisted, persist } = useGearItemPersistence(item);
-
   // Retrieve specialization entity associated with the item
   const spec = useGearSpec(item.spec);
-
-  // Calculate stats comparison for all items in current specialization
-  const comparisonMap = useGearItemStatsComparisonMap(item.spec);
 
   /**
    * Handle clicks on the card component
    */
-  const handleClick = useCallback(
-    () => (isPersisted ? erase() : persist()),
-    [isPersisted, erase, persist],
+  const handleTogglePersistence = useCallback(
+    () => onToggle(item),
+    [item, onToggle],
   );
 
   return (
-    <StyledGearItemCard onClick={handleClick}>
-      {isPersisted && <GearItemCardMarker />}
+    <StyledGearItemCard onClick={handleTogglePersistence}>
+      {item.owned && <GearItemCardMarker />}
       <GearItemCardBorder />
       <GearItemCardHeader>
         <GearItemCardHeaderLabels>
