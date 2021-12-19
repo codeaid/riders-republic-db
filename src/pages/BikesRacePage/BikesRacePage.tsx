@@ -1,11 +1,7 @@
 import { VoidFunctionComponent } from 'react';
-import { GearSpecTabs } from 'components';
-import { useGearSpecs } from 'hooks';
+import { GearCategoryTabs } from 'components';
 import { CategoryType } from 'types/categories';
 
-export const BikesRacePage: VoidFunctionComponent = () => {
-  // Extract bike race specializations
-  const specs = useGearSpecs(CategoryType.BikeRace);
-
-  return <GearSpecTabs specs={specs} />;
-};
+export const BikesRacePage: VoidFunctionComponent = () => (
+  <GearCategoryTabs category={CategoryType.BikeRace} />
+);

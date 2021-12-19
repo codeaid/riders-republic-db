@@ -1,11 +1,7 @@
 import { VoidFunctionComponent } from 'react';
-import { GearSpecTabs } from 'components';
-import { useGearSpecs } from 'hooks';
+import { GearCategoryTabs } from 'components';
 import { CategoryType } from 'types/categories';
 
-export const AirPage: VoidFunctionComponent = () => {
-  // Extract air specializations
-  const specs = useGearSpecs(CategoryType.Air);
-
-  return <GearSpecTabs specs={specs} />;
-};
+export const AirPage: VoidFunctionComponent = () => (
+  <GearCategoryTabs category={CategoryType.Air} />
+);
