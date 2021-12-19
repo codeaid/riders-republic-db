@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { StyledTabItemProps } from './types';
+import { StyledTabLabelProps } from './types';
 
-export const StyledTabItem = styled.li<StyledTabItemProps>`
+export const StyledTabLabel = styled.li<StyledTabLabelProps>`
   background-color: ${({ $active, theme }) =>
     $active ? theme.navigation.item.active.background : 'transparent'};
   cursor: pointer;

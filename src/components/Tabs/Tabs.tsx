@@ -7,8 +7,8 @@ import {
   VoidFunctionComponent,
 } from 'react';
 import { StyledTabs } from './Tabs.styled';
-import { TabItem } from './TabItem';
-import { TabItemProps, TabsProps } from './types';
+import { TabLabel } from './TabLabel';
+import { TabLabelProps, TabsProps } from './types';
 
 export const Tabs: VoidFunctionComponent<TabsProps> = props => {
   const { children, defaultActive = 0 } = props;
@@ -26,15 +26,15 @@ export const Tabs: VoidFunctionComponent<TabsProps> = props => {
         }
 
         // Create a new TabItem component using child's label as the content
-        return createElement<TabItemProps>(
-          TabItem,
+        return createElement<TabLabelProps>(
+          TabLabel,
           {
             active: index === activeTab,
             onClick: () => setActiveTab(index),
           },
           child.props.label,
         );
-      }),
+      }).filter(child => !!child),
     [activeTab, children],
   );
 

@@ -1,14 +1,14 @@
 import { FunctionComponentElement, ReactNode } from 'react';
 
-type TabClickHandler = () => void;
+type TabLabelClickHandler = () => void;
 
-export interface StyledTabItemProps {
+export interface StyledTabLabelProps {
   $active: boolean;
 }
 
-export interface TabItemProps {
+export interface TabLabelProps {
   active: boolean;
-  onClick: TabClickHandler;
+  onClick: TabLabelClickHandler;
 }
 
 export interface TabProps {
