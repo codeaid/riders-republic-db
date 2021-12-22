@@ -11,8 +11,8 @@ const gear: Array<RocketwingGearItem> = [
     score: 900,
     spec: AirSpecType.Rocketwing,
     stats: {
-      mobility: 85,
-      speed: 65,
+      speed: 85,
+      mobility: 65,
       engineBoost: 70,
     },
   },
@@ -23,8 +23,8 @@ const gear: Array<RocketwingGearItem> = [
     score: 900,
     spec: AirSpecType.Rocketwing,
     stats: {
-      mobility: 77,
-      speed: 85,
+      speed: 77,
+      mobility: 85,
       engineBoost: 77,
     },
   },
@@ -35,8 +35,8 @@ const gear: Array<RocketwingGearItem> = [
     score: 900,
     spec: AirSpecType.Rocketwing,
     stats: {
-      mobility: 70,
-      speed: 45,
+      speed: 70,
+      mobility: 45,
       engineBoost: 85,
     },
   },
