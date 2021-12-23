@@ -186,6 +186,20 @@ const gear: Array<SnowGearItem> = [
       absorption: 80,
     },
   },
+  {
+    brand: Brand.Armada,
+    category: CategoryType.SnowTricks,
+    kind: 'SK',
+    model: 'Declivity 102',
+    score: 803,
+    spec: SnowTricksSpecType.OffTrack,
+    stats: {
+      speed: 41,
+      airRotation: 64,
+      deepSnow: 80,
+      absorption: 80,
+    },
+  },
 ];
 
 export default gear;
