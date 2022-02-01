@@ -145,20 +145,6 @@ const gear: Array<SnowGearItem> = [
     },
   },
   {
-    brand: Brand.RR,
-    category: CategoryType.SnowTricks,
-    kind: '?',
-    model: 'The Invitational',
-    score: 0,
-    spec: SnowTricksSpecType.OffTrack,
-    stats: {
-      speed: 0,
-      airRotation: 0,
-      deepSnow: 0,
-      absorption: 0,
-    },
-  },
-  {
     brand: Brand.Burton,
     category: CategoryType.SnowTricks,
     kind: 'SB',
