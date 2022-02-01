@@ -19,7 +19,7 @@ const gear: Array<RocketwingGearItem> = [
   {
     brand: Brand.Victory,
     category: CategoryType.Air,
-    model: 'Yama Grand Opening Rocket',
+    model: 'Grand Opening Rocket',
     score: 900,
     spec: AirSpecType.Rocketwing,
     stats: {
