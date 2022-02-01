@@ -35,7 +35,7 @@ const gear: Array<BikeGearItem> = [
   {
     brand: Brand.Specialized,
     category: CategoryType.BikeTricks,
-    model: 'S-Work Epic Evo 01',
+    model: 'S-Works Epic Evo 01',
     score: 900,
     spec: BikeTricksSpecType.Freeride,
     stats: {
