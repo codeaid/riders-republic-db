@@ -74,6 +74,20 @@ const gear: Array<BikeGearItem> = [
       absorption: 75,
     },
   },
+  {
+    brand: Brand.Canyon,
+    category: CategoryType.BikeTricks,
+    model: 'Strive CF Team 02',
+    score: 855,
+    spec: BikeTricksSpecType.Freeride,
+    stats: {
+      sprint: 39,
+      speed: 52,
+      airRotation: 56,
+      grip: 80,
+      absorption: 75,
+    },
+  },
 ];
 
 export default gear;
