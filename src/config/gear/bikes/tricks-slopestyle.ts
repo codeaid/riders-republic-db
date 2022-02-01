@@ -82,7 +82,7 @@ const gear: Array<BikeGearItem> = [
     spec: BikeTricksSpecType.Slopestyle,
     stats: {
       sprint: 58,
-      speed: 48,
+      speed: 46,
       airRotation: 70,
       grip: 30,
       absorption: 41,
