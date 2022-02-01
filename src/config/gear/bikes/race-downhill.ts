@@ -81,11 +81,11 @@ const gear: Array<BikeGearItem> = [
     score: 805,
     spec: BikeRaceSpecType.Downhill,
     stats: {
-      sprint: 0,
-      speed: 0,
-      airRotation: 0,
-      grip: 0,
-      absorption: 0,
+      sprint: 43,
+      speed: 78,
+      airRotation: 25,
+      grip: 80,
+      absorption: 60,
     },
   },
 ];
