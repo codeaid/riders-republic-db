@@ -74,34 +74,6 @@ const gear: Array<BikeGearItem> = [
       absorption: 75,
     },
   },
-  {
-    brand: Brand.SantaCruz,
-    category: CategoryType.BikeTricks,
-    model: 'Bronson',
-    score: 855,
-    spec: BikeTricksSpecType.Freeride,
-    stats: {
-      sprint: 0,
-      speed: 0,
-      airRotation: 0,
-      grip: 0,
-      absorption: 0,
-    },
-  },
-  {
-    brand: Brand.RR,
-    category: CategoryType.BikeTricks,
-    model: 'The Invitational',
-    score: 855,
-    spec: BikeTricksSpecType.Freeride,
-    stats: {
-      sprint: 0,
-      speed: 0,
-      airRotation: 0,
-      grip: 0,
-      absorption: 0,
-    },
-  },
 ];
 
 export default gear;
