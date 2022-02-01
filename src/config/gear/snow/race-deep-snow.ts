@@ -93,7 +93,7 @@ const gear: Array<SnowGearItem> = [
     category: CategoryType.SnowRace,
     kind: 'SB',
     model: 'Stance 96',
-    score: 805,
+    score: 855,
     spec: SnowRaceSpecType.DeepSnow,
     stats: {
       speed: 76,
