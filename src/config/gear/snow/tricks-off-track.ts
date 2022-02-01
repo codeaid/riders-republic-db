@@ -50,7 +50,7 @@ const gear: Array<SnowGearItem> = [
     brand: Brand.Atomic,
     category: CategoryType.SnowTricks,
     kind: 'SK',
-    model: 'Bent Chetler 100',
+    model: 'Bentchelter 100',
     score: 900,
     spec: SnowTricksSpecType.OffTrack,
     stats: {
