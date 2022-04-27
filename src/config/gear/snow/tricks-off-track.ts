@@ -61,6 +61,20 @@ const gear: Array<SnowGearItem> = [
     },
   },
   {
+    brand: Brand.RR,
+    category: CategoryType.SnowTricks,
+    kind: 'SK',
+    model: 'Finish',
+    score: 900,
+    spec: SnowTricksSpecType.OffTrack,
+    stats: {
+      speed: 49,
+      airRotation: 65,
+      deepSnow: 81,
+      absorption: 85,
+    },
+  },
+  {
     brand: Brand.Yes,
     category: CategoryType.SnowTricks,
     kind: 'SB',

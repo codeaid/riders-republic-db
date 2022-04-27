@@ -46,6 +46,20 @@ const gear: Array<BikeGearItem> = [
       absorption: 35,
     },
   },
+  {
+    brand: Brand.Cube,
+    category: CategoryType.BikeRace,
+    model: 'Litening C68 X',
+    score: 900,
+    spec: BikeRaceSpecType.Road,
+    stats: {
+      sprint: 85,
+      speed: 77,
+      airRotation: 15,
+      grip: 15,
+      absorption: 35,
+    },
+  },
 ];
 
 export default gear;

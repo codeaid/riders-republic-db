@@ -47,6 +47,20 @@ const gear: Array<BikeGearItem> = [
     },
   },
   {
+    brand: Brand.GT,
+    category: CategoryType.BikeRace,
+    model: 'Fury',
+    score: 850,
+    spec: BikeRaceSpecType.Downhill,
+    stats: {
+      sprint: 45,
+      speed: 79,
+      airRotation: 25,
+      grip: 80,
+      absorption: 69,
+    },
+  },
+  {
     brand: Brand.RR,
     category: CategoryType.BikeRace,
     model: 'Decalmaster',

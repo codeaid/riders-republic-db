@@ -47,6 +47,20 @@ const gear: Array<BikeGearItem> = [
     },
   },
   {
+    brand: Brand.Cube,
+    category: CategoryType.BikeTricks,
+    model: 'TW015 HPC',
+    score: 900,
+    spec: BikeTricksSpecType.Freeride,
+    stats: {
+      sprint: 35,
+      speed: 57,
+      airRotation: 60,
+      grip: 80,
+      absorption: 70,
+    },
+  },
+  {
     brand: Brand.Canyon,
     category: CategoryType.BikeTricks,
     model: 'Torque',

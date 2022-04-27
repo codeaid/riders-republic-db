@@ -40,6 +40,18 @@ const gear: Array<RocketwingGearItem> = [
       engineBoost: 85,
     },
   },
+  {
+    brand: Brand.RR,
+    category: CategoryType.Air,
+    model: '22',
+    score: 900,
+    spec: AirSpecType.Rocketwing,
+    stats: {
+      speed: 80,
+      mobility: 65,
+      engineBoost: 75,
+    },
+  },
 ];
 
 export default gear;

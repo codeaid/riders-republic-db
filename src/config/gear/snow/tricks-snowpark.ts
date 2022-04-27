@@ -61,6 +61,20 @@ const gear: Array<SnowGearItem> = [
     },
   },
   {
+    brand: Brand.Kemper,
+    category: CategoryType.SnowTricks,
+    kind: 'SK',
+    model: 'Freestyle',
+    score: 900,
+    spec: SnowTricksSpecType.Snowpark,
+    stats: {
+      speed: 56,
+      airRotation: 73,
+      deepSnow: 30,
+      absorption: 55,
+    },
+  },
+  {
     brand: Brand.Yes,
     category: CategoryType.SnowTricks,
     kind: 'SB',

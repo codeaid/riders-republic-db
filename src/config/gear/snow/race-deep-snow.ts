@@ -61,6 +61,20 @@ const gear: Array<SnowGearItem> = [
     },
   },
   {
+    brand: Brand.Rossignol,
+    category: CategoryType.SnowRace,
+    kind: 'SK',
+    model: 'Sender 106 TI Plus',
+    score: 900,
+    spec: SnowRaceSpecType.DeepSnow,
+    stats: {
+      speed: 79,
+      airRotation: 25,
+      deepSnow: 79,
+      absorption: 85,
+    },
+  },
+  {
     brand: Brand.Nidecker,
     category: CategoryType.SnowRace,
     kind: 'SB',

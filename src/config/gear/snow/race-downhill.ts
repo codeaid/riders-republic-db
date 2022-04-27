@@ -19,6 +19,20 @@ const gear: Array<SnowGearItem> = [
     },
   },
   {
+    brand: Brand.Rossignol,
+    category: CategoryType.SnowRace,
+    kind: 'SK',
+    model: 'Hero FIS GS',
+    score: 900,
+    spec: SnowRaceSpecType.Downhill,
+    stats: {
+      speed: 91,
+      airRotation: 15,
+      deepSnow: 26,
+      absorption: 39,
+    },
+  },
+  {
     brand: Brand.Atomic,
     category: CategoryType.SnowRace,
     kind: 'SK',

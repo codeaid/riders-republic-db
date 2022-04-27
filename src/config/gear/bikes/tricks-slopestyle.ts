@@ -47,6 +47,20 @@ const gear: Array<BikeGearItem> = [
     },
   },
   {
+    brand: Brand.GT,
+    category: CategoryType.BikeTricks,
+    model: 'La Bomba',
+    score: 900,
+    spec: BikeTricksSpecType.Slopestyle,
+    stats: {
+      sprint: 57,
+      speed: 47,
+      airRotation: 75,
+      grip: 30,
+      absorption: 40,
+    },
+  },
+  {
     brand: Brand.Devinci,
     category: CategoryType.BikeTricks,
     model: 'Sabbath',
