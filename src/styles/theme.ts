@@ -8,6 +8,7 @@ export const theme = {
       race: '#bd6e37',
       tricks: '#fa923c',
     },
+    bmx: '#ffb446',
     snow: {
       race: '#379bd3',
       tricks: '#3ca4aa',

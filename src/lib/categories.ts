@@ -18,6 +18,8 @@ export const getCategoryColor = (
       return theme.category.bike.race;
     case CategoryType.BikeTricks:
       return theme.category.bike.tricks;
+    case CategoryType.Bmx:
+      return theme.category.bmx;
     case CategoryType.SnowRace:
       return theme.category.snow.race;
     case CategoryType.SnowTricks:

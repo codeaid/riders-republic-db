@@ -4,6 +4,7 @@ import {
   GearCategoryIconAirAsset,
   GearCategoryIconBikeRaceAsset,
   GearCategoryIconBikeTricksAsset,
+  GearCategoryIconBmxAsset,
   GearCategoryIconSnowRaceAsset,
   GearCategoryIconSnowTricksAsset,
 } from './assets';
@@ -28,6 +29,10 @@ export const GearCategoryIconBikeRace = styled(GearCategoryIcon)`
 
 export const GearCategoryIconBikeTricks = styled(GearCategoryIcon)`
   background-image: url(${GearCategoryIconBikeTricksAsset});
+`;
+
+export const GearCategoryIconBmx = styled(GearCategoryIcon)`
+  background-image: url(${GearCategoryIconBmxAsset});
 `;
 
 export const GearCategoryIconSnowRace = styled(GearCategoryIcon)`

@@ -4,6 +4,7 @@ import {
   GearCategoryIconAir,
   GearCategoryIconBikeRace,
   GearCategoryIconBikeTricks,
+  GearCategoryIconBmx,
   GearCategoryIconSnowRace,
   GearCategoryIconSnowTricks,
   StyledGearCategoryIcon,
@@ -24,6 +25,8 @@ export const GearCategoryIcon: VoidFunctionComponent<
         return <GearCategoryIconBikeRace />;
       case CategoryType.BikeTricks:
         return <GearCategoryIconBikeTricks />;
+      case CategoryType.Bmx:
+        return <GearCategoryIconBmx />;
       case CategoryType.SnowRace:
         return <GearCategoryIconSnowRace />;
       case CategoryType.SnowTricks:
