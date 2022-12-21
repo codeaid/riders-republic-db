@@ -2,6 +2,7 @@ export enum CategoryType {
   Air = 'air',
   BikeRace = 'bike:race',
   BikeTricks = 'bike:tricks',
+  Bmx = 'bmx',
   SnowRace = 'snow:race',
   SnowTricks = 'snow:tricks',
 }
@@ -18,6 +19,7 @@ type CategoryEntity<TCategoryType extends CategoryType> = {
 type AirCategory = CategoryEntity<CategoryType.Air>;
 type BikeRaceCategory = CategoryEntity<CategoryType.BikeRace>;
 type BikeTricksCategory = CategoryEntity<CategoryType.BikeTricks>;
+type BmxCategory = CategoryEntity<CategoryType.Bmx>;
 type SnowRaceCategory = CategoryEntity<CategoryType.SnowRace>;
 type SnowTricksCategory = CategoryEntity<CategoryType.SnowTricks>;
 
@@ -26,5 +28,6 @@ export type GearCategory =
   | AirCategory
   | BikeRaceCategory
   | BikeTricksCategory
+  | BmxCategory
   | SnowRaceCategory
   | SnowTricksCategory;

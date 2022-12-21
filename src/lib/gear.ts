@@ -3,6 +3,7 @@ import sha1 from 'sha1';
 import { CategoryType } from 'types/categories';
 import {
   BikeGearItem,
+  BmxGearItem,
   GearItem,
   RocketwingGearItem,
   SnowGearItem,
@@ -13,6 +14,7 @@ import {
   AirSpecType,
   BikeRaceSpecType,
   BikeTricksSpecType,
+  BmxSpecType,
   SnowRaceSpecType,
   SnowTricksSpecType,
   SpecType,
@@ -129,6 +131,14 @@ export const isBikeGearItem = (gear: GearItem): gear is BikeGearItem =>
       BikeTricksSpecType.Slopestyle,
     ] as Array<SpecType>
   ).includes(gear.spec);
+
+/**
+ * Determine if the specified gear item is a BMX gear item
+ *
+ * @param {GearItem} gear Gear item to validate
+ */
+export const isBmxGearItem = (gear: GearItem): gear is BmxGearItem =>
+  ([BmxSpecType.Dirt, BmxSpecType.Park] as Array<SpecType>).includes(gear.spec);
 
 /**
  * Determine if the specified gear item is a rocketwing item

@@ -1,6 +1,7 @@
 import { CategoryType } from 'types/categories';
 import {
   BikeGearItem,
+  BmxGearItem,
   GearItem,
   RocketwingGearItem,
   SnowGearItem,
@@ -10,12 +11,14 @@ import {
   AirSpecType,
   BikeRaceSpecType,
   BikeTricksSpecType,
+  BmxSpecType,
   SnowRaceSpecType,
   SnowTricksSpecType,
   SpecType,
 } from 'types/specs';
 import {
   BikeStats,
+  BmxStats,
   RocketwingStats,
   SnowStats,
   WingsuitStats,
@@ -27,6 +30,8 @@ export type GearCategoryItem<TCategoryType extends CategoryType> =
     ? RocketwingGearItem | WingsuitGearItem
     : TCategoryType extends CategoryType.BikeRace | CategoryType.BikeTricks
     ? BikeGearItem
+    : TCategoryType extends CategoryType.Bmx
+    ? BmxGearItem
     : TCategoryType extends CategoryType.SnowRace | CategoryType.SnowTricks
     ? SnowGearItem
     : GearItem;
@@ -45,6 +50,10 @@ export type GearSpecItem<TSpecType extends SpecType> =
     ? BikeGearItem
     : TSpecType extends BikeTricksSpecType.Slopestyle
     ? BikeGearItem
+    : TSpecType extends BmxSpecType.Dirt
+    ? BmxGearItem
+    : TSpecType extends BmxSpecType.Park
+    ? BmxGearItem
     : TSpecType extends SnowRaceSpecType.DeepSnow
     ? SnowGearItem
     : TSpecType extends SnowRaceSpecType.Downhill
@@ -59,6 +68,8 @@ export type GearSpecItem<TSpecType extends SpecType> =
 export type GearItemStats<TGearItem extends GearItem> =
   TGearItem extends BikeGearItem
     ? BikeStats
+    : TGearItem extends BmxGearItem
+    ? BmxStats
     : TGearItem extends RocketwingGearItem
     ? RocketwingStats
     : TGearItem extends SnowGearItem
@@ -81,6 +92,10 @@ export type GearSpecStats<TSpecType extends SpecType> =
     ? BikeStats
     : TSpecType extends BikeTricksSpecType.Slopestyle
     ? BikeStats
+    : TSpecType extends BmxSpecType.Dirt
+    ? BmxStats
+    : TSpecType extends BmxSpecType.Park
+    ? BmxStats
     : TSpecType extends SnowRaceSpecType.DeepSnow
     ? SnowStats
     : TSpecType extends SnowRaceSpecType.Downhill
@@ -99,6 +114,8 @@ export type GearCategorySpecType<TCategoryType extends CategoryType> =
     ? BikeRaceSpecType
     : TCategoryType extends CategoryType.BikeTricks
     ? BikeTricksSpecType
+    : TCategoryType extends CategoryType.Bmx
+    ? BmxSpecType
     : TCategoryType extends CategoryType.SnowRace
     ? SnowRaceSpecType
     : TCategoryType extends CategoryType.SnowTricks

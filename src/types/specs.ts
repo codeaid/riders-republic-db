@@ -19,6 +19,12 @@ export enum BikeTricksSpecType {
   Slopestyle = 'slopestyle',
 }
 
+// BMX specializations
+export enum BmxSpecType {
+  Dirt = 'dirt',
+  Park = 'park',
+}
+
 // Snow race specializations
 export enum SnowRaceSpecType {
   DeepSnow = 'deep snow',
@@ -36,6 +42,7 @@ export type SpecType =
   | AirSpecType
   | BikeRaceSpecType
   | BikeTricksSpecType
+  | BmxSpecType
   | SnowRaceSpecType
   | SnowTricksSpecType;
 
@@ -52,6 +59,7 @@ type GearSpecEntity<TCategoryType extends CategoryType> = {
 type AirSpec = GearSpecEntity<CategoryType.Air>;
 type BikeRaceSpec = GearSpecEntity<CategoryType.BikeRace>;
 type BikeTricksSpec = GearSpecEntity<CategoryType.BikeTricks>;
+type BmxSpec = GearSpecEntity<CategoryType.Bmx>;
 type SnowRaceSpec = GearSpecEntity<CategoryType.SnowRace>;
 type SnowTricksSpec = GearSpecEntity<CategoryType.SnowTricks>;
 
@@ -60,5 +68,6 @@ export type GearSpec =
   | AirSpec
   | BikeRaceSpec
   | BikeTricksSpec
+  | BmxSpec
   | SnowRaceSpec
   | SnowTricksSpec;

@@ -24,6 +24,9 @@ type BikeRaceGearItem = GearItemEntity<CategoryType.BikeRace, BikeStats>;
 type BikeTricksGearItem = GearItemEntity<CategoryType.BikeTricks, BikeStats>;
 export type BikeGearItem = BikeRaceGearItem | BikeTricksGearItem;
 
+// Generate BMX gear union
+export type BmxGearItem = GearItemEntity<CategoryType.Bmx, BikeStats>;
+
 // Generate snow gear union
 type SnowRaceGearItem = GearItemEntity<CategoryType.SnowRace, SnowStats>;
 type SnowTricksGearItem = GearItemEntity<CategoryType.SnowTricks, SnowStats>;
@@ -39,6 +42,7 @@ export type WingsuitGearItem = GearItemEntity<CategoryType.Air, WingsuitStats>;
 // Union of all available gear types
 export type GearItem =
   | BikeGearItem
+  | BmxGearItem
   | RocketwingGearItem
   | SnowGearItem
   | WingsuitGearItem;

@@ -9,6 +9,8 @@ export type BikeStats = {
   absorption: number;
 };
 
+export type BmxStats = BikeStats;
+
 export type RocketwingStats = {
   speed: number;
   mobility: number;
