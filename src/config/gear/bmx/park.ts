@@ -7,7 +7,7 @@ const gear: Array<BmxGearItem> = [
   {
     brand: Brand.Cult,
     category: CategoryType.Bmx,
-    model: "Heaven' Gate Begin",
+    model: "Heaven's Gate Begin",
     score: 900,
     spec: BmxSpecType.Park,
     stats: {
@@ -61,20 +61,6 @@ const gear: Array<BmxGearItem> = [
     },
   },
   {
-    brand: Brand.Prada,
-    category: CategoryType.Bmx,
-    model: 'Optical BMX',
-    score: 850,
-    spec: BmxSpecType.Park,
-    stats: {
-      sprint: 39,
-      speed: 40,
-      airRotation: 86,
-      grip: 30,
-      absorption: 40,
-    },
-  },
-  {
     brand: Brand.Tallorder,
     category: CategoryType.Bmx,
     model: 'Cranmer 195 Orange',
@@ -86,6 +72,20 @@ const gear: Array<BmxGearItem> = [
       airRotation: 90,
       grip: 15,
       absorption: 45,
+    },
+  },
+  {
+    brand: Brand.Prada,
+    category: CategoryType.Bmx,
+    model: 'Optical BMX',
+    score: 850,
+    spec: BmxSpecType.Park,
+    stats: {
+      sprint: 39,
+      speed: 40,
+      airRotation: 86,
+      grip: 30,
+      absorption: 40,
     },
   },
 ];
