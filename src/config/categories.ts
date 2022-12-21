@@ -15,6 +15,12 @@ export const categories: Array<GearCategory> = [
     type: CategoryType.BikeTricks,
   },
   {
+    color: '#ffb446',
+    name: 'BMX',
+    path: '/bmx',
+    type: CategoryType.Bmx,
+  },
+  {
     color: '#379bd3',
     name: 'Snow Race',
     path: '/snow/race',

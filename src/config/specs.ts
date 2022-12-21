@@ -3,6 +3,7 @@ import {
   AirSpecType,
   BikeRaceSpecType,
   BikeTricksSpecType,
+  BmxSpecType,
   GearSpec,
   SnowRaceSpecType,
   SnowTricksSpecType,
@@ -42,6 +43,23 @@ export const specs: Array<GearSpec> = [
       "Their light weight makes them unbeatable for quick spins and fast trucks, Tail Whip, Bar Spin, it's their thing.",
     name: 'Slopestyle',
     type: BikeTricksSpecType.Slopestyle,
+  },
+
+  {
+    category: CategoryType.Bmx,
+    code: 'DT',
+    description:
+      'Land super risky tricks on big airs in dirt playgrounds with those tougher BMXs.',
+    name: 'Dirt',
+    type: BmxSpecType.Dirt,
+  },
+  {
+    category: CategoryType.Bmx,
+    code: 'PK',
+    description:
+      'Own the area 52 spots, and many more, with the most agile and precise bikes you can get.',
+    name: 'Park',
+    type: BmxSpecType.Park,
   },
 
   {

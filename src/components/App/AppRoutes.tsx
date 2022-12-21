@@ -6,6 +6,7 @@ import { getCategoryPath } from 'lib/routes';
 import AirPage from 'pages/AirPage';
 import BikesRacePage from 'pages/BikesRacePage';
 import BikesTricksPage from 'pages/BikesTricksPage';
+import BmxPage from 'pages/BmxPage';
 import PlaceholderPage from 'pages/PlaceholderPage';
 import SnowRacePage from 'pages/SnowRacePage';
 import SnowTricksPage from 'pages/SnowTricksPage';
@@ -29,6 +30,10 @@ export const AppRoutes: VoidFunctionComponent = () => {
         <Route
           component={BikesTricksPage}
           path={getCategoryPath(categories, CategoryType.BikeTricks)}
+        />
+        <Route
+          component={BmxPage}
+          path={getCategoryPath(categories, CategoryType.Bmx)}
         />
         <Route
           component={SnowRacePage}
