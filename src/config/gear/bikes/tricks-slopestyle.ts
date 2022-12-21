@@ -61,6 +61,20 @@ const gear: Array<BikeGearItem> = [
     },
   },
   {
+    brand: Brand.Trek,
+    category: CategoryType.BikeTricks,
+    model: 'Ticket S',
+    score: 900,
+    spec: BikeTricksSpecType.Slopestyle,
+    stats: {
+      sprint: 49,
+      speed: 54,
+      airRotation: 75,
+      grip: 30,
+      absorption: 50,
+    },
+  },
+  {
     brand: Brand.Devinci,
     category: CategoryType.BikeTricks,
     model: 'Sabbath',
