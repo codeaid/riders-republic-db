@@ -47,6 +47,20 @@ const gear: Array<BikeGearItem> = [
     },
   },
   {
+    brand: Brand.Cube,
+    category: CategoryType.BikeRace,
+    model: 'TWO15',
+    score: 900,
+    spec: BikeRaceSpecType.Downhill,
+    stats: {
+      sprint: 49,
+      speed: 79,
+      airRotation: 25,
+      grip: 95,
+      absorption: 58,
+    },
+  },
+  {
     brand: Brand.GT,
     category: CategoryType.BikeRace,
     model: 'Fury',
