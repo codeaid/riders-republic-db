@@ -1,12 +1,14 @@
 import { useMemo } from 'react';
 import {
   isBikeGearItem,
+  isBmxGearItem,
   isRocketwingGearItem,
   isSnowGearItem,
   isWingsuitGearItem,
 } from 'lib/gear';
 import {
   BikeGearItem,
+  BmxGearItem,
   GearItem,
   RocketwingGearItem,
   SnowGearItem,
@@ -15,6 +17,7 @@ import {
 import { GearItemStatsComparisonMap } from 'types/stats';
 import { StyledGearItemStats } from './GearItemStats.styled';
 import { GearItemStatsBike } from './GearItemStatsBike';
+import { GearItemStatsBmx } from './GearItemStatsBmx';
 import { GearItemStatsRocketwing } from './GearItemStatsRocketwing';
 import { GearItemStatsSnow } from './GearItemStatsSnow';
 import { GearItemStatsWingsuit } from './GearItemStatsWingsuit';
@@ -33,6 +36,15 @@ export const GearItemStats = <TGearItem extends GearItem>(
             comparisonMap as GearItemStatsComparisonMap<BikeGearItem>
           }
           item={item}
+        />
+      );
+    } else if (isBmxGearItem(item)) {
+      return (
+        <GearItemStatsBmx
+          comparisonMap={
+            comparisonMap as GearItemStatsComparisonMap<BmxGearItem>
+          }
+          item={item as any}
         />
       );
     } else if (isRocketwingGearItem(item)) {

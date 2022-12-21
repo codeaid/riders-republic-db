@@ -1,5 +1,6 @@
 import {
   BikeGearItem,
+  BmxGearItem,
   GearItem,
   RocketwingGearItem,
   SnowGearItem,
@@ -10,6 +11,11 @@ import { GearItemStatsComparisonMap } from 'types/stats';
 export interface GearItemStatsBikeProps {
   comparisonMap: GearItemStatsComparisonMap<BikeGearItem>;
   item: BikeGearItem;
+}
+
+export interface GearItemStatsBmxProps {
+  comparisonMap: GearItemStatsComparisonMap<BmxGearItem>;
+  item: BmxGearItem;
 }
 
 export interface GearItemStatsRocketwingProps {
