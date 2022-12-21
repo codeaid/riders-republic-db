@@ -55,6 +55,18 @@ const gear: Array<WingsuitGearItem> = [
   {
     brand: Brand.RR,
     category: CategoryType.Air,
+    model: 'Zero Gravity',
+    score: 900,
+    spec: AirSpecType.Wingsuit,
+    stats: {
+      vertical: 60,
+      horizontal: 70,
+      slowMode: 85,
+    },
+  },
+  {
+    brand: Brand.RR,
+    category: CategoryType.Air,
     model: 'Williwaw Advanced',
     score: 800,
     spec: AirSpecType.Wingsuit,
