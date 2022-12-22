@@ -47,19 +47,19 @@ export const specs: Array<GearSpec> = [
 
   {
     category: CategoryType.Bmx,
-    code: 'DT',
-    description:
-      'Land super risky tricks on big airs in dirt playgrounds with those tougher BMXs.',
-    name: 'Dirt',
-    type: BmxSpecType.Dirt,
-  },
-  {
-    category: CategoryType.Bmx,
     code: 'PK',
     description:
       'Own the area 52 spots, and many more, with the most agile and precise bikes you can get.',
     name: 'Park',
     type: BmxSpecType.Park,
+  },
+  {
+    category: CategoryType.Bmx,
+    code: 'DT',
+    description:
+      'Land super risky tricks on big airs in dirt playgrounds with those tougher BMXs.',
+    name: 'Dirt',
+    type: BmxSpecType.Dirt,
   },
 
   {
