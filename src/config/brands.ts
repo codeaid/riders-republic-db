@@ -26,6 +26,7 @@ export const brandNames = new Map<Brand, string>([
   [Brand.Salomon, 'Salomon'],
   [Brand.SantaCruz, 'Santa Cruz'],
   [Brand.Specialized, 'Specialized'],
+  [Brand.Subrosa, 'Subrosa'],
   [Brand.Tallorder, 'Tallorder'],
   [Brand.Trek, 'Trek'],
   [Brand.Victory, 'Victory Yama'],

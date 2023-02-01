@@ -16,6 +16,7 @@ export enum Brand {
   Kona = 'kona',
   Specialized = 'specialized',
   SantaCruz = 'santa-cruz',
+  Subrosa = 'subrosa',
   Tallorder = 'tallorder',
   Trek = 'trek',
   Wethepeople = 'wethepeople',

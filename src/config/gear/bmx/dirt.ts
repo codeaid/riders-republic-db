@@ -19,6 +19,20 @@ const gear: Array<BmxGearItem> = [
     },
   },
   {
+    brand: Brand.Subrosa,
+    category: CategoryType.Bmx,
+    model: 'MR2',
+    score: 850,
+    spec: BmxSpecType.Dirt,
+    stats: {
+      sprint: 52,
+      speed: 53,
+      airRotation: 77,
+      grip: 45,
+      absorption: 55,
+    },
+  },
+  {
     brand: Brand.Tallorder,
     category: CategoryType.Bmx,
     model: '315 V2 Red',
