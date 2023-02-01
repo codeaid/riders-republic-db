@@ -31,6 +31,7 @@
   },
   "scripts": {
     "build": "react-scripts build",
+    "caniuse:update": "npx browserslist@latest --update-db",
     "deploy": "gh-pages -d build",
     "predeploy": "yarn build",
     "start": "react-scripts start"
