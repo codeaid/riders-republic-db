@@ -1,0 +1,23 @@
+---
+interface Props {
+  colorClass: string;
+  iconClass: string;
+}
+
+const { colorClass, iconClass } = Astro.props;
+---
+
+<div class:list={['p-0.5', 'rounded-sm', 'overflow-hidden', colorClass]}>
+  <div
+    class:list={[
+      'h-7',
+      'w-7',
+      'bg-center',
+      'bg-no-repeat',
+      'bg-cover',
+      'rounded-sm',
+      iconClass,
+    ]}
+  >
+  </div>
+</div>

@@ -1,0 +1,15 @@
+---
+import { getCategoryMenuEntries } from 'lib/navigation';
+import GearCategoryMenu from './GearCategoryMenu.astro';
+
+// Fetch all menu entries
+const entries = getCategoryMenuEntries();
+
+// Find the currently active category
+const pathname = new URL(Astro.request.url).pathname;
+const active = entries.find(entry => entry.path === pathname);
+---
+
+<div class="bg-nav w-48 p-2 shadow-md z-[9]">
+  <GearCategoryMenu active={active} entries={entries} />
+</div>

@@ -1,14 +1,25 @@
 {
   "arrowParens": "avoid",
+  "bracketSameLine": false,
   "bracketSpacing": true,
   "endOfLine": "lf",
-  "jsxBracketSameLine": false,
   "jsxSingleQuote": false,
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ],
   "parser": "typescript",
+  "plugins": [
+    "prettier-plugin-astro"
+  ],
   "printWidth": 80,
-  "quoteProps": "as-needed",
-  "singleQuote": true,
+  "quoteProps": "consistent",
   "semi": true,
+  "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "all",
   "useTabs": false

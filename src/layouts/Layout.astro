@@ -1,0 +1,88 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import AppLogo from 'components/AppLogo.astro';
+import AppTitle from 'components/AppTitle.astro';
+import AppToolbar from 'components/AppToolbar.astro';
+import Placeholder from 'components/Placeholder.astro';
+import Sidebar from 'components/Sidebar.astro';
+---
+
+<!doctype html>
+<html class="h-screen w-screen" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Riders Republic elite gear database" />
+
+    <link rel="icon" href="/favicon.png" />
+    <title>Riders Republic Elite Gear DB</title>
+
+    <link rel="stylesheet" href="/styles/fonts.css" />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link
+      rel="preload"
+      href="/fonts/HeadingPro-Bold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/HeadingPro-Book.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/HeadingPro-ExtraBold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/HeadingPro-Light.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+
+    <ViewTransitions />
+  </head>
+  <body
+    class="h-screen w-screen font-sans flex flex-col overflow-hidden bg-center bg-no-repeat bg-cover bg-[url(/images/bg-body.jpeg)]"
+  >
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V1TVLWBBD6"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+      gtag('config', 'G-V1TVLWBBD6');
+    </script>
+
+    <AppToolbar>
+      <a aria-label="Home" href="/">
+        <AppLogo />
+      </a>
+      <AppTitle>Riders Republic - Elite Gear Database</AppTitle>
+    </AppToolbar>
+
+    <div class="h-full w-full flex flex-grow">
+      <Sidebar />
+
+      <div class="h-full flex-grow overflow-auto">
+        <slot>
+          <Placeholder />
+        </slot>
+      </div>
+    </div>
+  </body>
+</html>

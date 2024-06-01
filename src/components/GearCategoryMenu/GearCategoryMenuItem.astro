@@ -1,0 +1,34 @@
+---
+import { GearCategoryMenuEntry } from 'types/routing';
+import GearCategoryMenuIcon from './GearCategoryMenuIcon.astro';
+import GearCategoryMenuLabel from './GearCategoryMenuLabel.astro';
+
+interface Props {
+  active: boolean;
+  entry: GearCategoryMenuEntry;
+}
+
+const { active, entry } = Astro.props;
+const { category, discipline, path } = entry;
+
+const colorClass = discipline?.color ?? category.color;
+const iconClass = discipline?.icon ?? category.icon;
+
+const label = discipline
+  ? [category.name, discipline.name].join(' ')
+  : category.name;
+---
+
+<li>
+  <a
+    class="bg-nav-item text-nav-item p-1 rounded-sm cursor-pointer flex items-center font-medium overflow-hidden no-underline transition-colors hover:bg-nav-item-active hover:text-nav-item-active"
+    class:list={{
+      'bg-nav-item-active': active,
+      'text-nav-item-active': active,
+    }}
+    href={path}
+  >
+    <GearCategoryMenuIcon colorClass={colorClass} iconClass={iconClass} />
+    <GearCategoryMenuLabel>{label}</GearCategoryMenuLabel>
+  </a>
+</li>

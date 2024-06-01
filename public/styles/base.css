@@ -1,0 +1,7 @@
+@tailwind base;
+
+@layer base {
+  html {
+    font-size: 20px;
+  }
+}

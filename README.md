@@ -1,23 +1,54 @@
-# Riders Republic Elite Gear Database
+# Astro Starter Kit: Basics
 
-This is a simple single page React application allowing you to view and compare
-all elite gear currently available in the
-[Riders Republic](https://www.ubisoft.com/en-gb/game/riders-republic) game.
+```sh
+npm create astro@latest -- --template basics
+```
 
-![Screenshot](docs/screenshot.png)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-Simply navigate the gear categories on the left side of the page by clicking on
-them and choose the available specializations at the top to compare stats of
-individual gear items.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-Green values represent the best stats within the current specialization whilst
-the red ones represent the worst. The difference between the best and second
-best values within the specialization are displayed as green tips of the
-progress bars.
+![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
-Values that are not yet known are displayed as question marks.
+## 🚀 Project Structure
 
-Special thanks go out to [u/Eurojo](https://www.reddit.com/user/Eurojo/) who has
-compiled a [spreadsheet](https://www.reddit.com/r/RidersRepublic/comments/rc0b4p/full_elite_gear_list_with_stats_almost/)
-with all the elite gear that is currently known to exist. Without him this
-project wouldn't have been possible.
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
+
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
