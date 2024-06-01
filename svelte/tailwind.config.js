@@ -29,7 +29,7 @@ export default {
       white,
     },
     backgroundImage: {
-      'test': "url('/images/categories/air.png')",
+      'body': "url('/images/background.jpeg')",
       'icon-air': "url('/images/categories/air.png')",
       'icon-bike-race': "url('/images/categories/bike-race.png')",
       'icon-bike-tricks': "url('/images/categories/bike-tricks.png')",
