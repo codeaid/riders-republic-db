@@ -1,45 +1,59 @@
 <!doctype html>
-<html class="font-sans" lang="en">
+<html class="font-sans text-base" lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="202020" />
-		<meta name="description" content="Riders Republic elite gear database" />
+		<meta name="theme-color" content="e6af41" />
+		<meta name="description" content="Riders Republic Elite Gear Database" />
 
 		<link
 			rel="preload"
-			href="/fonts/HeadingPro-Bold.woff"
+			href="/fonts/HeadingPro-Bold.woff2"
 			as="font"
-			type="font/woff"
-			crossorigin
+			type="font/woff2"
 		/>
 		<link
 			rel="preload"
-			href="/fonts/HeadingPro-Book.woff"
+			href="/fonts/HeadingPro-Book.woff2"
 			as="font"
-			type="font/woff"
-			crossorigin
+			type="font/woff2"
 		/>
 		<link
 			rel="preload"
-			href="/fonts/HeadingPro-ExtraBold.woff"
+			href="/fonts/HeadingPro-ExtraBold.woff2"
 			as="font"
-			type="font/woff"
-			crossorigin
+			type="font/woff2"
 		/>
 		<link
 			rel="preload"
-			href="/fonts/HeadingPro-Light.woff"
+			href="/fonts/HeadingPro-ExtraLight.woff2"
 			as="font"
-			type="font/woff"
-			crossorigin
+			type="font/woff2"
 		/>
+		<link
+			rel="preload"
+			href="/fonts/HeadingPro-Light.woff2"
+			as="font"
+			type="font/woff2"
+		/>
+		<link
+			rel="preload"
+			href="/fonts/HeadingPro-Regular.woff2"
+			as="font"
+			type="font/woff2"
+		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap" rel="stylesheet">
 
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<title>Riders Republic Elite Gear Database</title>
 		%sveltekit.head%
 	</head>
-	<body class="h-screen w-screen flex flex-col overflow-hidden bg-center bg-no-repeat bg-cover bg-body">
-		%sveltekit.body%
+	<body class="bg-center bg-no-repeat before:bg-cover before:bg-page before:backdrop-brightness-95 before:fixed before:top-0 before:left-0 before:h-full before:w-full before:-z-10">
+		<div style="display: contents">
+			%sveltekit.body%
+		</div>
 	</body>
 </html>
