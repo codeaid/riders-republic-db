@@ -10,3 +10,4 @@ export * from './snow/race/deepSnow';
 export * from './snow/race/downhill';
 export * from './snow/tricks/offTrack';
 export * from './snow/tricks/snowpark';
+export * from './stats';
