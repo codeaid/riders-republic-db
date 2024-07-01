@@ -1,26 +1,12 @@
-# IDEs
 /.idea
-/.vscode
-
-# Build directory
+/.svelte-kit
 /build
-
-# Testing coverage
-/coverage
-
-# NPM dependencies
+/package
 /node_modules
 
-# Miscellaneous
 .DS_Store
-
-# dotenv configuration files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Logging
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+.env
+.env.*
+!.env.example
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
