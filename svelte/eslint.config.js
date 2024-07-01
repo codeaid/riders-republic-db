@@ -21,10 +21,13 @@ export default [
   ...pluginSvelte.configs['flat/recommended'],
 
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ['**/*.{ts,tsx,svelte}'],
     rules: {
       // Enforce consistent usage of type imports
       '@typescript-eslint/consistent-type-imports': 'error',
+
+      // Disable warnings about usage of 'any'
+      '@typescript-eslint/no-explicit-any': 'off',
 
       // Ensure the `type` keyword is always outside the import braces
       'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
