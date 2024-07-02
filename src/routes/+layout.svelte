@@ -1,6 +1,9 @@
 <script lang="ts">
+  import extend from 'just-extend';
   import { onMount } from 'svelte';
+  import { MetaTags } from 'svelte-meta-tags';
   import type { LayoutData } from './$types';
+  import { page } from '$app/stores';
   import { gearStoreSubscribe, ownedGearStoreReady } from '$lib/store';
   import AppLogo from '@/components/AppLogo.svelte';
   import AppTitle from '@/components/AppTitle.svelte';
@@ -13,8 +16,14 @@
 
   export let data: LayoutData;
 
+  // Initialise loading gear data from the database on application load
   onMount(() => gearStoreSubscribe());
+
+  // Enable extending meta tags through child pages
+  $: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
 </script>
+
+<MetaTags {...metaTags} />
 
 {#if $ownedGearStoreReady}
   <div class="min-h-screen flex flex-col">

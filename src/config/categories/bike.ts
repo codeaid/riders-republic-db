@@ -21,6 +21,7 @@ export const bikeRaceCategory: BikeRaceCategory = {
       gear: bikeRaceDownhillGear,
       name: 'Downhill',
       slug: 'downhill',
+      title: 'Downhill Bikes',
     },
     {
       id: 'road',
@@ -30,6 +31,7 @@ export const bikeRaceCategory: BikeRaceCategory = {
       gear: bikeRaceRoadGear,
       name: 'Road',
       slug: 'road',
+      title: 'Road Bikes',
     },
   ],
 };
@@ -49,6 +51,7 @@ export const bikeTricksCategory: BikeTricksCategory = {
       gear: bikeTricksFreerideGear,
       name: 'Freeride',
       slug: 'freeride',
+      title: 'Freeride Bikes',
     },
     {
       id: 'slopestyle',
@@ -58,6 +61,7 @@ export const bikeTricksCategory: BikeTricksCategory = {
       gear: bikeTricksSlopestyleGear,
       name: 'Slopestyle',
       slug: 'slopestyle',
+      title: 'Slopestyle Bikes',
     },
   ],
 };

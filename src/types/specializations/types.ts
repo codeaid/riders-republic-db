@@ -11,4 +11,5 @@ export type SpecializationEntity<
   gear: GearEntity<TGearStatType>[];
   name: string;
   slug: string;
+  title: string;
 };

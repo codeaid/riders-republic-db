@@ -24,6 +24,7 @@ export const snowCategory: SnowCategory = {
           gear: snowRaceDownhillGear,
           name: 'Downhill Ski',
           slug: 'downhill-ski',
+          title: 'Downhill Skis',
         },
         {
           id: 'deep snow',
@@ -33,6 +34,7 @@ export const snowCategory: SnowCategory = {
           gear: snowRaceDeepSnowGear,
           name: 'Deep Snow',
           slug: 'deep-snow',
+          title: 'Deep Snow Snowboards',
         },
       ],
     },
@@ -51,6 +53,7 @@ export const snowCategory: SnowCategory = {
           gear: snowTricksSnowParkGear,
           name: 'Snowpark',
           slug: 'snowpark',
+          title: 'Snowpark Gear',
         },
         {
           id: 'off track',
@@ -60,6 +63,7 @@ export const snowCategory: SnowCategory = {
           gear: snowTricksOffTrackGear,
           name: 'Off-track',
           slug: 'off-track',
+          title: 'Off Track Snow Gear',
         },
       ],
     },

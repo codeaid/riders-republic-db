@@ -1,5 +1,6 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
+import { createSpecializationPageMeta } from '$lib/app';
 import { snowCategory } from '@/config/categories';
 
 export const entries = () =>
@@ -35,6 +36,7 @@ export const load: PageLoad = ({ params }) => {
 
   return {
     category,
+    pageMetaTags: createSpecializationPageMeta(specialization),
     parent: snowCategory,
     specialization,
   };

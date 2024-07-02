@@ -16,6 +16,7 @@ export const bmxCategory: BmxCategory = {
       gear: bmxParkGear,
       name: 'Park',
       slug: 'park',
+      title: 'BMX Park Bikes',
     },
     {
       id: 'dirt',
@@ -25,6 +26,7 @@ export const bmxCategory: BmxCategory = {
       gear: bmxDirtGear,
       name: 'Dirt',
       slug: 'dirt',
+      title: 'BMX Dirt Bikes',
     },
   ],
 };

@@ -16,6 +16,7 @@ export const airCategory: AirCategory = {
       gear: airRocketwingGear,
       name: 'Rocketwing',
       slug: 'rocketwing',
+      title: 'Rocketwings',
     },
     {
       id: 'wingsuit',
@@ -25,6 +26,7 @@ export const airCategory: AirCategory = {
       gear: airWingsuitGear,
       name: 'Wingsuit',
       slug: 'wingsuit',
+      title: 'Wingsuits',
     },
   ],
 };
