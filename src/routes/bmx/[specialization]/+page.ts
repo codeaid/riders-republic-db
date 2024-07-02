@@ -2,6 +2,9 @@ import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 import { bmxCategory } from '@/config/categories';
 
+export const entries = () =>
+  bmxCategory.specializations.map(({ slug }) => ({ specialization: slug }));
+
 export const load: PageLoad = ({ params }) => {
   const specialization = bmxCategory.specializations.find(s => s.slug === params.specialization);
 

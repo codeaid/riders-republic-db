@@ -2,6 +2,8 @@ import { error, redirect } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 import { snowCategory } from '@/config/categories';
 
+export const entries = () => snowCategory.categories.map(({ slug }) => ({ category: slug }));
+
 export const load: PageLoad = ({ params }) => {
   const category = snowCategory.categories.find(c => c.slug === params.category);
   if (!category) {

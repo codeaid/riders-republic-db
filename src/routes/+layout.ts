@@ -6,3 +6,5 @@ export const load: LayoutLoad = () => {
 
   return { navigationEntries };
 };
+
+export const ssr = false;

@@ -2,6 +2,22 @@ import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 import { snowCategory } from '@/config/categories';
 
+export const entries = () =>
+  snowCategory.categories.reduce(
+    (outer, category) => {
+      const specs = category.specializations.map(
+        specialization => ({
+          category: category.slug,
+          specialization: specialization.slug,
+        }),
+        [],
+      );
+
+      return outer.concat(specs);
+    },
+    [] as { category: string; specialization: string }[],
+  );
+
 export const load: PageLoad = ({ params }) => {
   const category = snowCategory.categories.find(c => c.slug === params.category);
   if (!category) {
