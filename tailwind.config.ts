@@ -128,6 +128,10 @@ const theme: Config = {
         },
       },
 
+      lineHeight: {
+        11: '2.75rem',
+      },
+
       rotate: {
         15: '15deg',
         190: '190deg',

@@ -10,7 +10,7 @@
   role="tab"
 >
   <a
-    class="px-4 py-2 block cursor-pointer md:min-w-40 text-center focus-visible:outline-none focus-visible:underline"
+    class="px-4 flex items-baseline justify-center leading-11 cursor-pointer md:min-w-40 text-center focus-visible:outline-none focus-visible:underline"
     class:bg-brand={active}
     class:shadow-lg={active}
     class:z-[1]={active}

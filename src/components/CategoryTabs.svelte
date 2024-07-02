@@ -26,7 +26,7 @@
     <Tab {active} {href}>
       {spec.name}
 
-      <span class="ml-0.5 text-lg" class:text-white={active} class:text-neutral-500={!active}
+      <span class="ml-1 text-lg" class:text-white={active} class:text-neutral-500={!active}
         >({owned}/{total})</span
       >
     </Tab>
