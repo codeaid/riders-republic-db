@@ -12,6 +12,7 @@ type BikeBrand =
   | 'gt'
   | 'kink'
   | 'kona'
+  | 'marin'
   | 'santa-cruz'
   | 'specialized'
   | 'subrosa'
@@ -20,13 +21,16 @@ type BikeBrand =
   | 'wethepeople'
   | 'yt';
 
-type GenericBrand = 'rr';
+type GenericBrand = 'rr' | 'shackdaddys';
+
+type SkateboardBrand = 'blind-spot' | 'mini-logo' | 'pizza' | 'powell-peralta';
 
 type SnowBrand =
   | 'armada'
   | 'atomic'
   | 'burton'
   | 'faction'
+  | 'gilson'
   | 'kemper'
   | 'lobster'
   | 'nidecker'
@@ -36,4 +40,4 @@ type SnowBrand =
   | 'salomon'
   | 'yes';
 
-export type Brand = AirBrand | BikeBrand | GenericBrand | SnowBrand;
+export type Brand = AirBrand | BikeBrand | GenericBrand | SkateboardBrand | SnowBrand;

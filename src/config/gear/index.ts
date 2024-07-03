@@ -6,6 +6,8 @@ export * from './bike/tricks/freeride';
 export * from './bike/tricks/slopestyle';
 export * from './bmx/dirt';
 export * from './bmx/park';
+export * from './skateboard/ramp';
+export * from './skateboard/street';
 export * from './snow/race/deepSnow';
 export * from './snow/race/downhill';
 export * from './snow/tricks/offTrack';

@@ -1,4 +1,10 @@
-import { airCategory, bikeCategory, bmxCategory, snowCategory } from '@/config/categories';
+import {
+  airCategory,
+  bikeCategory,
+  bmxCategory,
+  skateboardCategory,
+  snowCategory,
+} from '@/config/categories';
 import type { MultiCategory, SingleCategory } from '@/types/categories';
 import type { NavigationEntry } from '@/types/navigation';
 
@@ -42,5 +48,6 @@ export const getNavigationEntries = (): NavigationEntry[] =>
     getSingleCategoryNavigationEntries(airCategory),
     ...getMultiCategoryNavigationEntries(bikeCategory),
     getSingleCategoryNavigationEntries(bmxCategory),
+    getSingleCategoryNavigationEntries(skateboardCategory),
     ...getMultiCategoryNavigationEntries(snowCategory),
   ].sort((a, b) => a.name.localeCompare(b.name));
