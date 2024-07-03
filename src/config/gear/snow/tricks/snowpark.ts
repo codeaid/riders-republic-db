@@ -80,10 +80,23 @@ export const snowTricksSnowParkGear: Array<SnowGear> = [
     },
   },
   {
+    brand: 'gilson',
+    hash: '57ba4faa',
+    kind: 'SK',
+    model: 'SteepSteep',
+    score: 900,
+    stats: {
+      'speed': 55,
+      'air-rotation': 74,
+      'deep-snow': 30,
+      'absorption': 55,
+    },
+  },
+  {
     brand: 'prada',
     hash: 'fb8e8080',
     kind: 'SK',
-    model: 'Faction Prodigy 3.0',
+    model: 'Prada Faction Prodigy 3.0',
     score: 850,
     stats: {
       'speed': 53,

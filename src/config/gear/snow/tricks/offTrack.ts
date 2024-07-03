@@ -67,6 +67,19 @@ export const snowTricksOffTrackGear: Array<SnowGear> = [
     },
   },
   {
+    brand: 'armada',
+    hash: '8e674793',
+    kind: 'SK',
+    model: 'Armada X Alpine Initiatives JJ',
+    score: 900,
+    stats: {
+      'speed': 49,
+      'air-rotation': 64,
+      'deep-snow': 82,
+      'absorption': 85,
+    },
+  },
+  {
     brand: 'yes',
     hash: '7b768e4c',
     kind: 'SB',
