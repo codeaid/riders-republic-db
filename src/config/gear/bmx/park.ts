@@ -67,6 +67,19 @@ export const bmxParkGear: Array<BikeGear> = [
     },
   },
   {
+    brand: 'rr',
+    hash: 'c095ff9a',
+    model: 'Mummy Bike',
+    score: 900,
+    stats: {
+      'sprint': 39,
+      'speed': 40,
+      'air-rotation': 90,
+      'grip': 30,
+      'absorption': 40,
+    },
+  },
+  {
     brand: 'prada',
     hash: 'fce77428',
     model: 'Optical BMX',
