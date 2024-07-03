@@ -35,13 +35,13 @@ const theme: Config = {
     }),
 
     backgroundImage: {
-      'icon-category-air': "url('/images/icons/category-air-tp.png')",
-      'icon-category-bike-race': "url('/images/icons/category-bike-race-tp.png')",
-      'icon-category-bike-tricks': "url('/images/icons/category-bike-tricks-tp.png')",
-      'icon-category-bmx': "url('/images/icons/category-bmx-tp.png')",
-      'icon-category-skateboard': "url('/images/icons/category-skateboard-tp.png')",
-      'icon-category-snow-race': "url('/images/icons/category-snow-race-tp.png')",
-      'icon-category-snow-tricks': "url('/images/icons/category-snow-tricks-tp.png')",
+      'icon-category-air': "url('/images/icons/category-air.png')",
+      'icon-category-bike-race': "url('/images/icons/category-bike-race.png')",
+      'icon-category-bike-tricks': "url('/images/icons/category-bike-tricks.png')",
+      'icon-category-bmx': "url('/images/icons/category-bmx.png')",
+      'icon-category-skateboard': "url('/images/icons/category-skateboard.png')",
+      'icon-category-snow-race': "url('/images/icons/category-snow-race.png')",
+      'icon-category-snow-tricks': "url('/images/icons/category-snow-tricks.png')",
 
       'icon-stat-absorption': 'url("/images/icons/stat-absorption.png")',
       'icon-stat-air-rotation': 'url("/images/icons/stat-air-rotation.png")',
