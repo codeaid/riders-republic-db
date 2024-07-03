@@ -3,6 +3,7 @@ import type {
   AirRocketwingGearStat,
   AirWingsuitGearStat,
   BikeGearStat,
+  SkateboardGearStat,
   SnowGearStat,
 } from '@/types/stats';
 import type { GetEntityIds } from '@/types/utils';
@@ -32,6 +33,12 @@ export type BmxParkSpecialization = SpecializationEntity<'park', BikeGearStat>;
 export type BmxDirtSpecialization = SpecializationEntity<'dirt', BikeGearStat>;
 
 /**
+ * Skateboard category entities
+ */
+export type SkateboardStreetSpecialization = SpecializationEntity<'street', SkateboardGearStat>;
+export type SkateboardRampSpecialization = SpecializationEntity<'ramp', SkateboardGearStat>;
+
+/**
  * Snow (race) category entities
  */
 export type SnowDownhillSkiSpecialization = SpecializationEntity<'downhill ski', SnowGearStat>;
@@ -55,6 +62,8 @@ export type Specialization =
   | BikeSlopestyleSpecialization
   | BmxDirtSpecialization
   | BmxParkSpecialization
+  | SkateboardRampSpecialization
+  | SkateboardStreetSpecialization
   | SnowDeepSnowSpecialization
   | SnowDownhillSkiSpecialization
   | SnowOfftrackSpecialization

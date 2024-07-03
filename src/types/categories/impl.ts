@@ -8,6 +8,8 @@ import type {
   BikeSlopestyleSpecialization,
   BmxDirtSpecialization,
   BmxParkSpecialization,
+  SkateboardRampSpecialization,
+  SkateboardStreetSpecialization,
   SnowDeepSnowSpecialization,
   SnowDownhillSkiSpecialization,
   SnowOfftrackSpecialization,
@@ -50,6 +52,14 @@ export type BikeCategory = MultiCategoryEntity<'bikes', [BikeRaceCategory, BikeT
 export type BmxCategory = CategoryEntity<'bmx', [BmxParkSpecialization, BmxDirtSpecialization]>;
 
 /**
+ * Skateboard entity
+ */
+export type SkateboardCategory = CategoryEntity<
+  'skateboard',
+  [SkateboardStreetSpecialization, SkateboardRampSpecialization]
+>;
+
+/**
  * Snow (race) category entity
  */
 export type SnowRaceCategory = CategoryEntity<
@@ -74,6 +84,12 @@ export type SnowCategoryId = GetEntityIds<SnowRaceCategory | SnowTricksCategory>
 /**
  * Core category unions
  */
-export type RootCategory = AirCategory | BikeCategory | BmxCategory | SnowCategory;
+export type RootCategory =
+  | AirCategory
+  | BikeCategory
+  | BmxCategory
+  | SkateboardCategory
+  | SnowCategory;
+
 export type SingleCategory = FilterExtends<RootCategory, CategoryEntity<any, any>>;
 export type MultiCategory = FilterExtends<RootCategory, MultiCategoryEntity<any, any>>;

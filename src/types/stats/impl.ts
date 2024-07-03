@@ -18,6 +18,14 @@ export type BikeGearStat = Extract<
 >;
 
 /**
+ * Skateboard specialization stats
+ */
+export type SkateboardGearStat = Extract<
+  GearStatType,
+  'speed' | 'board-tricks' | 'air-rotation' | 'grip' | 'absorption'
+>;
+
+/**
  * Snow specialization stats
  */
 export type SnowGearStat = Extract<
