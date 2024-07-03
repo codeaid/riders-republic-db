@@ -80,6 +80,19 @@ export const bikeTricksFreerideGear: Array<BikeGear> = [
     },
   },
   {
+    brand: 'yt',
+    hash: '633e4502',
+    model: 'Tues Custom',
+    score: 900,
+    stats: {
+      'sprint': 41,
+      'speed': 55,
+      'air-rotation': 58,
+      'grip': 80,
+      'absorption': 50,
+    },
+  },
+  {
     brand: 'canyon',
     hash: '62657a66',
     model: 'Torque',
