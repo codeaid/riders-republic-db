@@ -9,7 +9,7 @@ const config = {
       '@/*': './src/*',
     },
     paths: {
-      base: process.argv.includes('dev') ? '' : process.env.BASE_PATH,
+      base: process.env.PUBLIC_BASE_PATH ?? '',
       relative: false,
     },
     prerender: {
