@@ -32,9 +32,11 @@
       class:bg-brand-80={!isOwned}
     ></div>
 
-    <div class="z-20 relative overflow-hidden">
+    <div class="z-20 flex-1 relative overflow-hidden">
       <div class="text-sm font-semibold text-left uppercase">{gear.brand}</div>
-      <div class="text-2xl font-bold uppercase overflow-hidden text-ellipsis whitespace-nowrap">
+      <div
+        class="text-2xl text-left font-bold uppercase overflow-hidden text-ellipsis whitespace-nowrap"
+      >
         {gear.model}
         {#if gear.kind}
           <span class="ml-0.5 text-lg text-neutral-400 font-medium">{gear.kind}</span>
