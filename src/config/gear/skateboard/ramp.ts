@@ -40,4 +40,17 @@ export const skateboardRampGear: Array<SkateboardGear> = [
       'absorption': 41,
     },
   },
+  {
+    brand: 'blind-spot',
+    hash: '5adb5031',
+    model: 'Zombie',
+    score: 900,
+    stats: {
+      'speed': 59,
+      'board-tricks': 60,
+      'air-rotation': 65,
+      'grip': 10,
+      'absorption': 45,
+    },
+  },
 ];

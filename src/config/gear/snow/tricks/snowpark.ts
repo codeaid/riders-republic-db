@@ -93,6 +93,19 @@ export const snowTricksSnowParkGear: Array<SnowGear> = [
     },
   },
   {
+    brand: 'faction',
+    hash: '3e67ab9d',
+    kind: 'SK',
+    model: 'Studio O GU',
+    score: 900,
+    stats: {
+      'speed': 56,
+      'air-rotation': 73,
+      'deep-snow': 30,
+      'absorption': 55,
+    },
+  },
+  {
     brand: 'prada',
     hash: 'fb8e8080',
     kind: 'SK',
