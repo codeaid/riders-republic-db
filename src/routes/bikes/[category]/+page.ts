@@ -1,5 +1,6 @@
 import { error, redirect } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
+import { base } from '$app/paths';
 import { bikeCategory } from '@/config/categories';
 
 export const entries = () => bikeCategory.categories.map(({ slug }) => ({ category: slug }));
@@ -19,5 +20,5 @@ export const load: PageLoad = ({ params }) => {
     });
   }
 
-  redirect(302, `/${bikeCategory.slug}/${params.category}/${specialization.slug}`);
+  redirect(302, `${base}/${bikeCategory.slug}/${params.category}/${specialization.slug}`);
 };

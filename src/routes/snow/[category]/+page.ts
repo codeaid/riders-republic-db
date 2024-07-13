@@ -1,5 +1,6 @@
 import { error, redirect } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
+import { base } from '$app/paths';
 import { snowCategory } from '@/config/categories';
 
 export const entries = () => snowCategory.categories.map(({ slug }) => ({ category: slug }));
@@ -19,5 +20,5 @@ export const load: PageLoad = ({ params }) => {
     });
   }
 
-  redirect(302, `/${snowCategory.slug}/${params.category}/${specialization.slug}`);
+  redirect(302, `${base}/${snowCategory.slug}/${params.category}/${specialization.slug}`);
 };

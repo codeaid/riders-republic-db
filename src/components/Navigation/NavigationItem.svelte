@@ -1,6 +1,7 @@
 <script lang="ts">
   import NavigationIcon from './NavigationIcon.svelte';
   import NavigationLabel from './NavigationLabel.svelte';
+  import { base } from '$app/paths';
   import type { NavigationEntry } from '@/types/navigation';
 
   export let active: boolean;
@@ -13,7 +14,7 @@
     class:bg-brand={active}
     class:md:bg-nav-item={!active}
     class:text-nav-item-active={active}
-    href={entry.path}
+    href={base + entry.path}
     tabindex="0"
     title={entry.name}
   >

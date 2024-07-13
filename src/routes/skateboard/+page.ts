@@ -1,5 +1,6 @@
 import { error, redirect } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
+import { base } from '$app/paths';
 import { skateboardCategory } from '@/config/categories';
 
 // @ts-expect-error Workaround for Svelte not being able to build the route
@@ -13,5 +14,5 @@ export const load: PageLoad = () => {
     });
   }
 
-  redirect(302, `/${skateboardCategory.id}/${specialization.slug}`);
+  redirect(302, `${base}/${skateboardCategory.id}/${specialization.slug}`);
 };

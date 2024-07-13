@@ -1,5 +1,6 @@
 <script lang="ts">
   import { cubicOut } from 'svelte/easing';
+  import { base } from '$app/paths';
   import { flyDown } from '$lib/transitions';
 </script>
 
@@ -13,7 +14,7 @@
       class="animate-wiggle drop-shadow-md select-none"
       draggable="false"
       height="100"
-      src="/images/logo.png"
+      src="{base}/images/logo.png"
       width="100"
     />
   </div>

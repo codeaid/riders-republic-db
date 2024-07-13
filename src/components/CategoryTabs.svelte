@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { getSpecializationGearCounts } from '$lib/gear';
   import { ownedGearStore } from '$lib/store';
   import Tab from '@/components/Tabs/Tab.svelte';
@@ -20,7 +21,7 @@
 <Tabs>
   {#each category.specializations as spec}
     {@const active = spec.id === specialization.id}
-    {@const href = `${baseUrl}/${spec.slug}`}
+    {@const href = `${base}${baseUrl}/${spec.slug}`}
     {@const [owned, total] = counts[spec.id]}
 
     <Tab {active} {href}>
