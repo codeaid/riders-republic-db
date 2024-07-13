@@ -1,4 +1,3 @@
-import { error } from '@sveltejs/kit';
 import type { OwnedGearRow } from '@/types/db';
 
 let db: IDBDatabase;
@@ -11,7 +10,7 @@ const LEGACY_STORAGE_KEY = 'gear.owned';
  * Initialise the IndexedDB database instance
  */
 export const createDatabaseAsync = () =>
-  new Promise<void>((resolve, reject) => {
+  new Promise<IDBDatabase>((resolve, reject) => {
     // Ensure IndexedDB is available before proceeding
     if (typeof window === 'undefined' || typeof window.indexedDB === 'undefined') {
       throw new Error('IndexedDB is not available');
@@ -23,13 +22,13 @@ export const createDatabaseAsync = () =>
     // Listen for successful connections
     request.addEventListener('success', event => {
       db = (event.target as IDBOpenDBRequest).result;
-      resolve();
+      resolve(db);
     });
 
     // Listen for errors while opening the connection
-    request.addEventListener('error', () => {
+    request.addEventListener('error', event => {
       console.error('Failed connecting to IndexedDB');
-      reject(error);
+      reject(event);
     });
 
     // Database needs initialisation or upgrading
@@ -42,12 +41,10 @@ export const createDatabaseAsync = () =>
       });
 
       // Initialise owned gear store
-      const ownedGearStore = db.createObjectStore(DB_STORE_OWNED_GEAR, {
+      db.createObjectStore(DB_STORE_OWNED_GEAR, {
         autoIncrement: false,
         keyPath: 'hash',
       });
-
-      ownedGearStore.createIndex('hashIdx', 'hash', { unique: true });
     });
   });
 
@@ -126,8 +123,8 @@ export const readOwnedGearAsync = () =>
  *
  * @param hash Target hash to check
  */
-export const hasOwnedGearAsync = (hash: string) => {
-  return new Promise<boolean>((resolve, reject) => {
+export const hasOwnedGearAsync = (hash: string) =>
+  new Promise<boolean>((resolve, reject) => {
     // Initialize a request  for the owned gear store
     const request = db
       .transaction(DB_STORE_OWNED_GEAR, 'readonly')
@@ -145,7 +142,6 @@ export const hasOwnedGearAsync = (hash: string) => {
       reject(event);
     });
   });
-};
 
 /**
  * Insert a new owned gear row into IndexedDB
