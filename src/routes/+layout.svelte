@@ -36,7 +36,7 @@
       <Sidebar navigationEntries={data.navigationEntries} />
 
       <main class="flex flex-col flex-1">
-        <div class="p-4 pb-20 flex flex-1">
+        <div class="p-3 pb-6 md:p-6 md:pb-12 flex flex-1">
           <div class="max-w-screen-xl mx-auto flex-1">
             <slot />
           </div>
