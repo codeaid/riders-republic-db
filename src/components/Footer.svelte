@@ -7,7 +7,7 @@
         class="text-blue-800 transition-colors hover:text-blue-500"
         href="https://discord.com/users/366350295674126337">contact me</a
       >
-      on Discord or mention <span class="font-bold">@nekhebu</span> on the official Riders Republic
+      on Discord or mention me on the official Riders Republic
       <a
         class="text-blue-800 transition-colors hover:text-blue-500"
         href="https://discord.gg/ridersrepublic">server</a
