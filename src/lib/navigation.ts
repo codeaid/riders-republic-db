@@ -36,18 +36,17 @@ const getMultiCategoryNavigationEntries = (category: MultiCategory) =>
   category.categories.map<NavigationEntry>(subcategory => ({
     colorClass: subcategory.colorClass,
     iconClass: subcategory.iconClass,
-    name: `${category.name} (${subcategory.name})`,
+    name: `${category.name} ${subcategory.name}`,
     path: getCategoryUrl(category.slug, subcategory.slug),
   }));
 
 /**
  * Build a list of navigation entries from all available categories
  */
-export const getNavigationEntries = (): NavigationEntry[] =>
-  [
-    getSingleCategoryNavigationEntries(airCategory),
-    ...getMultiCategoryNavigationEntries(bikeCategory),
-    getSingleCategoryNavigationEntries(bmxCategory),
-    getSingleCategoryNavigationEntries(skateboardCategory),
-    ...getMultiCategoryNavigationEntries(snowCategory),
-  ].sort((a, b) => a.name.localeCompare(b.name));
+export const getNavigationEntries = (): NavigationEntry[] => [
+  ...getMultiCategoryNavigationEntries(bikeCategory),
+  getSingleCategoryNavigationEntries(bmxCategory),
+  getSingleCategoryNavigationEntries(skateboardCategory),
+  ...getMultiCategoryNavigationEntries(snowCategory),
+  getSingleCategoryNavigationEntries(airCategory),
+];
