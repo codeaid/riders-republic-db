@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square150x150logo src="/riders-republic-db/mstile-150x150.png?v=2.0.0"/>
+            <TileColor>#e6af41</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>

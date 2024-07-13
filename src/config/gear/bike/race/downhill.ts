@@ -1,0 +1,108 @@
+import type { BikeGear } from '@/types/gear';
+
+export const bikeRaceDownhillGear: Array<BikeGear> = [
+  {
+    brand: 'specialized',
+    hash: 'adf8e860',
+    model: 'Demo Loic Bruni',
+    score: 900,
+    stats: {
+      'sprint': 50,
+      'speed': 78,
+      'air-rotation': 25,
+      'grip': 95,
+      'absorption': 58,
+    },
+  },
+  {
+    brand: 'rr',
+    hash: '72dfb081',
+    model: 'POW34RED',
+    score: 900,
+    stats: {
+      'sprint': 46,
+      'speed': 83,
+      'air-rotation': 25,
+      'grip': 80,
+      'absorption': 63,
+    },
+  },
+  {
+    brand: 'santa-cruz',
+    hash: '2d14aacd',
+    model: 'V10 Syndicate',
+    score: 900,
+    stats: {
+      'sprint': 42,
+      'speed': 86,
+      'air-rotation': 25,
+      'grip': 80,
+      'absorption': 73,
+    },
+  },
+  {
+    brand: 'cube',
+    hash: '6f4cb881',
+    model: 'TWO15',
+    score: 900,
+    stats: {
+      'sprint': 49,
+      'speed': 79,
+      'air-rotation': 25,
+      'grip': 95,
+      'absorption': 58,
+    },
+  },
+  {
+    brand: 'gt',
+    hash: '406eac68',
+    model: 'Fury',
+    score: 850,
+    stats: {
+      'sprint': 45,
+      'speed': 79,
+      'air-rotation': 25,
+      'grip': 80,
+      'absorption': 69,
+    },
+  },
+  {
+    brand: 'rr',
+    hash: 'f797672c',
+    model: 'Decalmaster',
+    score: 805,
+    stats: {
+      'sprint': 41,
+      'speed': 80,
+      'air-rotation': 25,
+      'grip': 70,
+      'absorption': 70,
+    },
+  },
+  {
+    brand: 'kona',
+    hash: '6ce45142',
+    model: 'Process 153 CR DL 29 01',
+    score: 805,
+    stats: {
+      'sprint': 45,
+      'speed': 76,
+      'air-rotation': 25,
+      'grip': 80,
+      'absorption': 60,
+    },
+  },
+  {
+    brand: 'specialized',
+    hash: '7f310c61',
+    model: 'Demo 02',
+    score: 805,
+    stats: {
+      'sprint': 43,
+      'speed': 78,
+      'air-rotation': 25,
+      'grip': 80,
+      'absorption': 60,
+    },
+  },
+];

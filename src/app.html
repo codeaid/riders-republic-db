@@ -1,0 +1,75 @@
+<!doctype html>
+<html class="font-sans text-base" lang="en">
+	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=%sveltekit.env.PUBLIC_GOOGLE_ANALYTICS_ID%"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', '%sveltekit.env.PUBLIC_GOOGLE_ANALYTICS_ID%');
+		</script>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="e6af41" />
+		<meta name="description" content="Riders Republic Elite Gear Database" />
+
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/fonts/HeadingPro-Bold.woff2"
+			as="font"
+			type="font/woff2"
+		/>
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/fonts/HeadingPro-Book.woff2"
+			as="font"
+			type="font/woff2"
+		/>
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/fonts/HeadingPro-ExtraBold.woff2"
+			as="font"
+			type="font/woff2"
+		/>
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/fonts/HeadingPro-ExtraLight.woff2"
+			as="font"
+			type="font/woff2"
+		/>
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/fonts/HeadingPro-Light.woff2"
+			as="font"
+			type="font/woff2"
+		/>
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/fonts/HeadingPro-Regular.woff2"
+			as="font"
+			type="font/woff2"
+		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap" rel="stylesheet">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="%sveltekit.assets%/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="%sveltekit.assets%/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="%sveltekit.assets%/favicon-16x16.png">
+		<link rel="manifest" href="%sveltekit.assets%/site.webmanifest">
+		<link rel="mask-icon" href="%sveltekit.assets%/safari-pinned-tab.svg" color="#e6af41">
+		<link rel="shortcut icon" href="%sveltekit.assets%/favicon.ico">
+		<meta name="msapplication-TileColor" content="#e6af41">
+		<meta name="msapplication-config" content="%sveltekit.assets%/browserconfig.xml">
+		<meta name="theme-color" content="#e6af41">
+		<title>Riders Republic DB</title>
+		%sveltekit.head%
+	</head>
+	<body class="bg-center bg-no-repeat before:bg-cover before:bg-page before:backdrop-brightness-95 before:fixed before:top-0 before:left-0 before:h-full before:w-full before:-z-10">
+		<div style="display: contents">
+			%sveltekit.body%
+		</div>
+	</body>
+</html>

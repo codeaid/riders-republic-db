@@ -1,173 +1,64 @@
-import { sortBy, sortedUniq } from 'lodash';
-import sha1 from 'sha1';
-import { CategoryType } from 'types/categories';
-import {
-  BikeGearItem,
-  BmxGearItem,
-  GearItem,
-  RocketwingGearItem,
-  SnowGearItem,
-  WingsuitGearItem,
-} from 'types/gear';
-import { GearCategoryItem, GearSpecItem, GearSpecStats } from 'types/mapping';
-import {
-  AirSpecType,
-  BikeRaceSpecType,
-  BikeTricksSpecType,
-  BmxSpecType,
-  SnowRaceSpecType,
-  SnowTricksSpecType,
-  SpecType,
-} from 'types/specs';
-import {
-  GearItemStatsComparison,
-  GearItemStatsComparisonMap,
-} from 'types/stats';
+import { getBrandName } from '$lib/brands';
+import type { GearEntity } from '@/types/gear';
+import type { SpecializationEntity } from '@/types/specializations';
 
 /**
- * Get gear items belonging to the specified category
+ * Sort gear entities by brand name
  *
- * @param {Array<GearItem>} gear Source gear items
- * @param {CategoryType} category Target category type
+ * @param a Left operand
+ * @param b Right operand
  */
-export const getGearCategoryItems = <TCategoryType extends CategoryType>(
-  gear: Array<GearItem>,
-  category: TCategoryType,
-) =>
-  gear.filter(item => item.category === category) as Array<
-    GearCategoryItem<TCategoryType>
-  >;
+const sortGearByBrand = (a: GearEntity<any>, b: GearEntity<any>) =>
+  getBrandName(a.brand)?.localeCompare(getBrandName(b.brand));
 
 /**
- * Get gear items belonging to the specified specialization
+ * Sort gear entities by model
  *
- * @param {Array<GearItem>} gear Source gear items
- * @param {SpecType} spec Target specialization
+ * @param a Left operand
+ * @param b Right operand
  */
-export const getGearSpecItems = <TSpecType extends SpecType>(
-  gear: Array<GearItem>,
-  spec: TSpecType,
-) => gear.filter(item => item.spec === spec) as Array<GearSpecItem<TSpecType>>;
+const sortGearByModel = (a: GearEntity<any>, b: GearEntity<any>) => a.model.localeCompare(b.model);
 
 /**
- * Build a gear stats comparison map for all items in the specified
- * specialization
+ * Sort gear entities by gear score in descending order
  *
- * @param {Array<GearItem>} items Source gear items
+ * @param a Left operand
+ * @param b Right operand
  */
-export const getGearItemComparisonMap = <TSpecType extends SpecType>(
-  items: Array<GearSpecItem<TSpecType>>,
-) => {
-  // Build a map of stats and a list of all their available values
-  const valueMap = items
-    .map(item => item.stats)
-    .reduce(
-      (map, stats) =>
-        Object.entries(stats).reduce((innerMap, [stat, value]) => {
-          // Retrieve current stats values or default to an empty array
-          const values =
-            innerMap.get(stat as keyof GearSpecStats<TSpecType>) ?? [];
+const sortGearByScore = (a: GearEntity<any>, b: GearEntity<any>) => b.score - a.score;
 
-          // Append current stat value to the end of the list
-          return innerMap.set(stat as keyof GearSpecStats<TSpecType>, [
-            ...values,
-            value,
-          ]);
-        }, map),
-      new Map<keyof GearSpecStats<TSpecType>, Array<number>>(),
-    );
+/**
+ * Sort gear entities based on application logic
+ */
+export const getSortedGear = (gear: GearEntity<any>[]) =>
+  gear.sort((a, b) => {
+    const scoreComparison = sortGearByScore(a, b);
+    if (scoreComparison !== 0) {
+      return scoreComparison;
+    }
 
-  // Iterate through the map of numbers and generate a comparison map for each
-  const orderedMap = [...valueMap].map(([stat, values]) => {
-    // Sort values in an ascending order and remove duplicates
-    const sorted = sortBy([...values]);
-    const unique = sortedUniq(sorted).reverse();
+    const brandComparison = sortGearByBrand(a, b);
+    if (brandComparison !== 0) {
+      return brandComparison;
+    }
 
-    // Retrieve best and second best values from the array
-    const [best = 0, second] = unique;
-
-    // Calculate the lowest (worst) value
-    const worst = unique.length ? Math.min(...unique) : 0;
-
-    return [
-      stat as keyof GearSpecStats<TSpecType>,
-      {
-        best,
-        // Use best values as second best if array only contains one value
-        second: second ?? best,
-        worst,
-      } as GearItemStatsComparison,
-    ];
+    return sortGearByModel(a, b);
   });
 
-  return Object.fromEntries(orderedMap) as GearItemStatsComparisonMap<
-    GearSpecItem<TSpecType>
-  >;
-};
-
 /**
- * Generate a unique hash for the specified gear item
+ * Create a map of specialization ids and the number of owned gear items in each of them
  *
- * @param {GearItem} item Target gear item
+ * @param store Current store value
+ * @param specializations List of specializations to process
  */
-export const getGearItemHash = (item: GearItem) => {
-  const parts = [item.category, item.spec, item.brand, item.model];
-  const result = sha1(parts.join(':'));
-
-  return result.substr(0, 8);
-};
-
-/**
- * Determine if the specified gear item is a bike gear item
- *
- * @param {GearItem} gear Gear item to validate
- */
-export const isBikeGearItem = (gear: GearItem): gear is BikeGearItem =>
-  (
-    [
-      BikeRaceSpecType.Downhill,
-      BikeRaceSpecType.Road,
-      BikeTricksSpecType.Freeride,
-      BikeTricksSpecType.Slopestyle,
-    ] as Array<SpecType>
-  ).includes(gear.spec);
-
-/**
- * Determine if the specified gear item is a BMX gear item
- *
- * @param {GearItem} gear Gear item to validate
- */
-export const isBmxGearItem = (gear: GearItem): gear is BmxGearItem =>
-  ([BmxSpecType.Dirt, BmxSpecType.Park] as Array<SpecType>).includes(gear.spec);
-
-/**
- * Determine if the specified gear item is a rocketwing item
- *
- * @param {GearItem} gear Gear item to validate
- */
-export const isRocketwingGearItem = (
-  gear: GearItem,
-): gear is RocketwingGearItem => gear.spec === AirSpecType.Rocketwing;
-
-/**
- * Determine if the specified gear item is a snow gear item
- *
- * @param {GearItem} gear Gear item to validate
- */
-export const isSnowGearItem = (gear: GearItem): gear is SnowGearItem =>
-  (
-    [
-      SnowRaceSpecType.DeepSnow,
-      SnowRaceSpecType.Downhill,
-      SnowTricksSpecType.OffTrack,
-      SnowTricksSpecType.Snowpark,
-    ] as Array<SpecType>
-  ).includes(gear.spec);
-
-/**
- * Determine if the specified gear item is a wingsuit item
- *
- * @param {GearItem} gear Gear item to validate
- */
-export const isWingsuitGearItem = (gear: GearItem): gear is WingsuitGearItem =>
-  gear.spec === AirSpecType.Wingsuit;
+export const getSpecializationGearCounts = (
+  store: Set<string>,
+  specializations: SpecializationEntity<any, any>[],
+) =>
+  specializations.reduce<Record<string, [number, number]>>(
+    (acc, spec) => {
+      const count = spec.gear.filter(gear => store.has(gear.hash)).length;
+      return { ...acc, [spec.id]: [count, spec.gear.length] };
+    },
+    {} as Record<string, [number, number]>,
+  );
