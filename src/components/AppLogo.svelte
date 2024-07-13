@@ -2,7 +2,7 @@
   import { base } from '$app/paths';
 </script>
 
-<a href="/">
+<a href="{base}/">
   <img
     alt="RR Logo"
     class="transition-transform duration-150 hover:rotate-190 hover:scale-115 hidden md:block"
