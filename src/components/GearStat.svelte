@@ -10,8 +10,8 @@
   export let valueSecond: number;
   export let valueLowest: number;
 
-  $: isHighest = value === valueHighest;
-  $: isLowest = value === valueLowest;
+  $: isHighest = value === valueHighest && value !== valueLowest;
+  $: isLowest = value === valueLowest && value !== valueHighest;
   $: valueBonus = isHighest ? value - valueSecond : 0;
   $: percBonus = (valueBonus / value) * 100;
 
