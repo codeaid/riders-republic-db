@@ -1,15 +1,5 @@
-import { getBrandName } from '$lib/brands';
 import type { GearEntity } from '@/types/gear';
 import type { SpecializationEntity } from '@/types/specializations';
-
-/**
- * Sort gear entities by brand name
- *
- * @param a Left operand
- * @param b Right operand
- */
-const sortGearByBrand = (a: GearEntity<any>, b: GearEntity<any>) =>
-  getBrandName(a.brand)?.localeCompare(getBrandName(b.brand));
 
 /**
  * Sort gear entities by model
@@ -35,11 +25,6 @@ export const getSortedGear = (gear: GearEntity<any>[]) =>
     const scoreComparison = sortGearByScore(a, b);
     if (scoreComparison !== 0) {
       return scoreComparison;
-    }
-
-    const brandComparison = sortGearByBrand(a, b);
-    if (brandComparison !== 0) {
-      return brandComparison;
     }
 
     return sortGearByModel(a, b);
