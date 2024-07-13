@@ -63,7 +63,7 @@ const getGearStatInfo = <
     case 1:
       return createGearStatInfo(values[0], values[0], values[0]);
     case 2:
-      return createGearStatInfo(values[0], values[0], values[1]);
+      return createGearStatInfo(values[0], values[1], values[1]);
     case 3:
       return createGearStatInfo(values[0], values[1], values[2]);
   }
