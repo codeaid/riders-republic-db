@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { getBrandName } from '$lib/brands';
   import { ownedGearStore, gearStoreToggleAsync } from '$lib/store';
   import GearLabel from '@/components/GearLabel.svelte';
   import GearScore from '@/components/GearScore.svelte';
@@ -33,7 +34,7 @@
     ></div>
 
     <div class="z-20 flex-1 relative overflow-hidden">
-      <div class="text-sm font-semibold text-left uppercase">{gear.brand}</div>
+      <div class="text-base font-semibold text-left uppercase">{getBrandName(gear.brand)}</div>
       <div
         class="text-2xl text-left font-bold uppercase overflow-hidden text-ellipsis whitespace-nowrap"
       >
