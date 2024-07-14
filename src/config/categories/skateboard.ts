@@ -11,7 +11,7 @@ export const skateboardCategory: SkateboardCategory = {
     {
       id: 'street',
       code: 'ST',
-      description: 'Those boards are perfect for Urban settings. New trick opportunity!',
+      description: 'Those boards are perfect for Urban settings. New spot? New trick opportunity!',
       gear: skateboardStreetGear,
       name: 'Street',
       slug: 'street',
@@ -20,7 +20,8 @@ export const skateboardCategory: SkateboardCategory = {
     {
       id: 'ramp',
       code: 'RP',
-      description: '{unknown}',
+      description:
+        'Ramps, quarters, bowls, big airs? Own them all with that spec built for speed and air time!',
       gear: skateboardRampGear,
       name: 'Ramp',
       slug: 'ramp',
