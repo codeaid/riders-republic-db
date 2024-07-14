@@ -2,7 +2,7 @@
   class="p-4 text-2xs leading-4 tracking-wide text-center bg-footer backdrop-blur text-black drop-shadow-sm lato-regular cursor-default z-10 bg-gradient-to-r from-footer via-white to-footer"
 >
   <div class="max-w-screen-lg mx-auto space-y-3">
-    <p class="text-xs font-semibold">
+    <p class="text-xs font-medium">
       If you have a gear item that is missing here you can <a
         class="text-blue-800 transition-colors hover:text-blue-500"
         href="https://discord.com/users/366350295674126337">contact me</a
