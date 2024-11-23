@@ -122,7 +122,7 @@ export const bikeTricksSlopestyleGear: Array<BikeGear> = [
     brand: 'canyon',
     hash: '42c0697e',
     model: 'Stitched 360 X Nineyard',
-    score: 855,
+    score: 900,
     stats: {
       'sprint': 57,
       'speed': 46,
