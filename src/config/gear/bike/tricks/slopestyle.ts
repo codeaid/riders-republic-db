@@ -119,6 +119,19 @@ export const bikeTricksSlopestyleGear: Array<BikeGear> = [
     },
   },
   {
+    brand: 'canyon',
+    hash: '42c0697e',
+    model: 'Stitched 360 X Nineyard',
+    score: 855,
+    stats: {
+      'sprint': 57,
+      'speed': 46,
+      'air-rotation': 75,
+      'grip': 30,
+      'absorption': 50,
+    },
+  },
+  {
     brand: 'devinci',
     hash: 'ab8d49ba',
     model: 'Sabbath',
