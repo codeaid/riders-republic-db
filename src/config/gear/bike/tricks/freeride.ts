@@ -16,6 +16,19 @@ export const bikeTricksFreerideGear: Array<BikeGear> = [
   },
   {
     brand: 'commencal',
+    hash: 'a30dc6b4',
+    model: 'FRS',
+    score: 900,
+    stats: {
+      'sprint': 49,
+      'speed': 78,
+      'air-rotation': 25,
+      'grip': 95,
+      'absorption': 68,
+    },
+  },
+  {
+    brand: 'commencal',
     hash: '4d7f800d',
     model: 'Furious Pef',
     score: 900,
