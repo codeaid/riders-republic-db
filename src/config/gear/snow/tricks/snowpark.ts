@@ -144,4 +144,17 @@ export const snowTricksSnowParkGear: Array<SnowGear> = [
       'absorption': 55,
     },
   },
+  {
+    brand: 'burton',
+    hash: '518a4ae1',
+    kind: 'SB',
+    model: 'Good Company',
+    score: 900,
+    stats: {
+      'speed': 55,
+      'air-rotation': 75,
+      'deep-snow': 30,
+      'absorption': 45,
+    },
+  },
 ];
