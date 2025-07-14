@@ -196,4 +196,17 @@ export const snowTricksOffTrackGear: Array<SnowGear> = [
       'absorption': 80,
     },
   },
+  {
+    brand: 'commencal',
+    hash: '83e5da5e',
+    kind: 'SK',
+    model: 'Clash 25',
+    score: 900,
+    stats: {
+      'speed': 48,
+      'air-rotation': 65,
+      'deep-snow': 82,
+      'absorption': 85,
+    },
+  },
 ];
